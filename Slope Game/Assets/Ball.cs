@@ -6,15 +6,16 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 
-
+  public Text scoreText;
   public int speed = 100;
   public float rotSpeed =30;
   public int i = 3;
-  
-    public int score = 0;
+
+    //public int score = 0;
   public int terrain = 0;
   public int width = 30;
   public int height = 256;
+  public int score = 0;
 
   // How much of the terrain you can see in the scene view
   public float scale = 10f;
@@ -25,6 +26,7 @@ public class Ball : MonoBehaviour {
   public float offsetZ = 10f;
   int x = 1;
   int z = 0;
+ public int dif1 = 0;
 	void Start () {
 
 	}
@@ -59,6 +61,13 @@ public class Ball : MonoBehaviour {
 	 void Update()
     {
 
+        score = score + 1;
+        //scoreText.text = "Score: " + score;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            speed = speed + 10;
+        }
+        Debug.Log(score);
       transform.position += Vector3.forward * Time.deltaTime * speed;
 
 
@@ -115,10 +124,11 @@ public class Ball : MonoBehaviour {
                 int min = 256*x;
                 int max = 256*x+256;
                 int rand = Random.Range(min, max);
-                /*
+            
+                
                 GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand - 20);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand - 100);
+                GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand - 60);
 
@@ -133,22 +143,25 @@ public class Ball : MonoBehaviour {
                 int rand = Random.Range(min, max);
                 GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand - 40);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(20, 5, rand- 30);
+                GameObject.Find("Cube1").transform.position = new Vector3(20, 5, rand);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand-50);
+                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand);
 
                 z=0;
                 i++;
                 x++;
             }
-            
+
 
             if (GameObject.Find("Sphere").transform.position.y < -100)
             {
                 // print Game Over
+                Application.LoadLevel(Application.loadedLevel);
+                Application.LoadLevel("GameOver");
 
-                
+
             }
+            
 
         }
 
