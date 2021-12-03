@@ -7,7 +7,7 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
   public Text scoreText;
-  public int speed = 100;
+  public int speed = 1;
   public float rotSpeed =30;
   public int i = 3;
 
@@ -91,7 +91,7 @@ public class Ball : MonoBehaviour {
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
-        if (GameObject.Find("Sphere").transform.position.z>(256*i)-100){
+        if (GameObject.Find("Sphere").transform.position.z>(256*i)){
             /*
             //Create a new terrain
             GameObject parent = (GameObject)Instantiate(new GameObject("Terrain"));
@@ -149,7 +149,7 @@ public class Ball : MonoBehaviour {
                   GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i -100);
                 //Generate random num with min and max
                 int min = 256*x;
-                int max = 256*x+140;
+                int max = 256*x+256;
 
                 int rand = Random.Range(min, max);
                 GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand );
@@ -169,7 +169,9 @@ public class Ball : MonoBehaviour {
             GameObject.Find("Cube2").AddComponent<BoxCollider>();
 
 
-            void OnCollisionEnter(Collision collision)
+
+
+            void OnTriggerEnter(Collision collision)
             {
               Debug.Log("COLLIDED");
                 if (collision.gameObject.name == "Cube")
@@ -193,7 +195,10 @@ public class Ball : MonoBehaviour {
                     score = score + 10;
                     //scoreText.text = "Score: " + score;
                 }
+
             }
+
+
 
 
 
