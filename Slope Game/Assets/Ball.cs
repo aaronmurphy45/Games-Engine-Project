@@ -29,9 +29,10 @@ public class Ball : MonoBehaviour {
   int z = 0;
  public int dif1 = 0;
  public int speedup = 1;
-  AudioSource audioSource;
-	void Start () {
+  AudioSource audioData; //=// "Assets/66772__kevinkace__barrel-break-4.wav";
 
+	void Start () {
+        audioData = GetComponent<AudioSource>();
 	}
 
     int Score()
@@ -72,7 +73,7 @@ public class Ball : MonoBehaviour {
         }
         Debug.Log(score);
         transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
-        
+
 
         //Detect if the left mouse button is pressed
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -168,32 +169,33 @@ public class Ball : MonoBehaviour {
             GameObject.Find("Cube2").AddComponent<BoxCollider>();
 
 
-            void OnCollisionEnter(Collison collision)
+            void OnCollisionEnter(Collision collision)
             {
+              Debug.Log("COLLIDED");
                 if (collision.gameObject.name == "Cube")
                 {
                     Destroy(collision.gameObject);
                     score = score + 10;
-                    audioSource.Play();
+                    audioData.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (collision.gameObject.name == "Cube1")
                 {
                     Destroy(collision.gameObject);
                     score = score + 10;
-                     audioSource.Play();
+                     audioData.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (collision.gameObject.name == "Cube2")
                 {
                     Destroy(collision.gameObject);
-                    audioSource.Play();
+                    audioData.Play();
                     score = score + 10;
                     //scoreText.text = "Score: " + score;
                 }
             }
 
-            
+
 
 
             /*
