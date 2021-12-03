@@ -87,7 +87,7 @@ public class Ball : MonoBehaviour {
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
-        if (GameObject.Find("Sphere").transform.position.z>(256*i)-30){
+        if (GameObject.Find("Sphere").transform.position.z>(256*i)-50){
 
             /*
             //Create a new terrain
@@ -103,45 +103,49 @@ public class Ball : MonoBehaviour {
             */
             if (z == 0){
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 50);
+                GameObject.Find("SpikedTerrain2").transform.position = new Vector3(-112, -200, 256 * i - 50);
                 z++;
                 i++;
                 int min = 256*x;
                 int max = 256*x+256;
-                /*
+
+
                 int rand = Random.Range(min, max);
                 GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand-21);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand- 80);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand-120);
-                */
+
                 x++;
             }
             if (z==1){
                 GameObject.Find("Terrain1").transform.position = new Vector3(0, 0, 256 * i - 50);
+                  GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-112, -200, 256 * i -50);
                 z++;
                 i++;
                 int min = 256*x;
                 int max = 256*x+256;
                 int rand = Random.Range(min, max);
-            
-                
-                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand - 20);
+
+
+                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand - 60);
+                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand);
 
                 x++;
             }
             if (z==2){
                 GameObject.Find("Terrain").transform.position = new Vector3(0, 0, 256 * i -50);
+                  GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i -50);
                 //Generate random num with min and max
                 int min = 256*x;
                 int max = 256*x+140;
 
                 int rand = Random.Range(min, max);
-                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand - 40);
+                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand );
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube1").transform.position = new Vector3(20, 5, rand);
                 rand = Random.Range(min, max);
@@ -161,7 +165,7 @@ public class Ball : MonoBehaviour {
 
 
             }
-            
+
 
         }
 
