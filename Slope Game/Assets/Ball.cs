@@ -16,6 +16,7 @@ public class Ball : MonoBehaviour {
   public int width = 30;
   public int height = 256;
   public int score = 0;
+  //public int speedup = 1l
 
   // How much of the terrain you can see in the scene view
   public float scale = 10f;
@@ -28,6 +29,7 @@ public class Ball : MonoBehaviour {
   int z = 0;
  public int dif1 = 0;
  public int speedup = 1;
+  AudioSource audioSource;
 	void Start () {
 
 	}
@@ -69,8 +71,8 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
         }
         Debug.Log(score);
-        transform.position += Vector3.forward * Time.deltaTime * speed;
-
+        transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
+        
 
         //Detect if the left mouse button is pressed
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -161,6 +163,39 @@ public class Ball : MonoBehaviour {
             }
 
             //Collider
+            GameObject.Find("Cube").AddComponent<BoxCollider>();
+            GameObject.Find("Cube1").AddComponent<BoxCollider>();
+            GameObject.Find("Cube2").AddComponent<BoxCollider>();
+
+
+            void OnCollisionEnter(Collison collision)
+            {
+                if (collision.gameObject.name == "Cube")
+                {
+                    Destroy(collision.gameObject);
+                    score = score + 10;
+                    audioSource.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (collision.gameObject.name == "Cube1")
+                {
+                    Destroy(collision.gameObject);
+                    score = score + 10;
+                     audioSource.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (collision.gameObject.name == "Cube2")
+                {
+                    Destroy(collision.gameObject);
+                    audioSource.Play();
+                    score = score + 10;
+                    //scoreText.text = "Score: " + score;
+                }
+            }
+
+            
+
+
             /*
             Collider.OnCollisionEnter();
               Collider.OnCollisionExit();
@@ -172,7 +207,9 @@ public class Ball : MonoBehaviour {
             if (GameObject.Find("Sphere").transform.position.y < -10)
             {
                 // print Game Over
-                //Application.LoadLevel(Application.loadedLevel);
+                Application.LoadLevel(Application.loadedLevel);
+
+                speed = 0;
                 Application.LoadLevel("GameOver");
 
 
