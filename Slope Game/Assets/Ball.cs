@@ -88,7 +88,6 @@ public class Ball : MonoBehaviour {
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
         if (GameObject.Find("Sphere").transform.position.z>(256*i)-50){
-
             /*
             //Create a new terrain
             GameObject parent = (GameObject)Instantiate(new GameObject("Terrain"));
