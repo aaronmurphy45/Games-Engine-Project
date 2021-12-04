@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour {
   public Text scoreText;
   public int speed = 1;
   public float rotSpeed =30;
-  public int i = 3;
+  public int i = 1;
 
     //public int score = 0;
   public int terrain = 0;
@@ -26,7 +26,7 @@ public class Ball : MonoBehaviour {
   public float offsetY = 10f;
   public float offsetZ = 10f;
   int x = 1;
-  int z = 0;
+  public int z = 0;
  public int dif1 = 0;
  public int speedup = 1;
   AudioSource audioData; //=// "Assets/66772__kevinkace__barrel-break-4.wav";
@@ -91,7 +91,8 @@ public class Ball : MonoBehaviour {
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
-        if (GameObject.Find("Sphere").transform.position.z>(256*i)){
+        if (GameObject.Find("Sphere").transform.position.z>(256*i - 100)) {
+            Debug.Log("hi");
             /*
             //Create a new terrain
             GameObject parent = (GameObject)Instantiate(new GameObject("Terrain"));
@@ -105,6 +106,7 @@ public class Ball : MonoBehaviour {
             i++;
             */
             if (z == 0){
+                Debug.Log("hi2");
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 100);
                 GameObject.Find("SpikedTerrain2").transform.position = new Vector3(-112, -200, 256 * i - 100);
                 z++;
@@ -123,6 +125,7 @@ public class Ball : MonoBehaviour {
                 x++;
             }
             if (z==1){
+                Debug.Log("hi3");
                 GameObject.Find("Terrain1").transform.position = new Vector3(0, 0, 256 * i - 100);
                 GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-112, -200, 256 * i -100);
                 GameObject.Find("TunnelRight").transform.position = new Vector3(29, 5, 256 * i - 100);
@@ -145,7 +148,8 @@ public class Ball : MonoBehaviour {
                 x++;
             }
             if (z==2){
-                GameObject.Find("Terrain").transform.position = new Vector3(0, 0, 256 * i -100);
+                Debug.Log("hi4");
+                GameObject.Find("Terrain0").transform.position = new Vector3(0, 0, 256 * i -100);
                   GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i -100);
                 //Generate random num with min and max
                 int min = 256*x;
@@ -164,14 +168,12 @@ public class Ball : MonoBehaviour {
             }
 
             //Collider
-            GameObject.Find("Cube").AddComponent<BoxCollider>();
-            GameObject.Find("Cube1").AddComponent<BoxCollider>();
-            GameObject.Find("Cube2").AddComponent<BoxCollider>();
+          
 
 
 
 
-            void OnTriggerEnter(Collision collision)
+            void OnTriggerStay(Collision collision)
             {
               Debug.Log("COLLIDED");
                 if (collision.gameObject.name == "Cube")
