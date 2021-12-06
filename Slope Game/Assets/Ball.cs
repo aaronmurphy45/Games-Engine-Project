@@ -91,20 +91,9 @@ public class Ball : MonoBehaviour {
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
-        if (GameObject.Find("Sphere").transform.position.z>(256*i - 100)) {
+        if (GameObject.Find("Sphere").transform.position.z>(256*i - 50)) {
             Debug.Log("hi");
-            /*
-            //Create a new terrain
-            GameObject parent = (GameObject)Instantiate(new GameObject("Terrain"));
-            parent.transform.position = new Vector3(0, 0, 256*i);
 
-            TerrainData terrainData = new TerrainData();
-            terrainData = GenerateTerrain(terrainData);
-            Terrain terrain = Terrain.CreateTerrainGameObject(terrainData).GetComponent<Terrain>();
-            terrain.transform.position = new Vector3(0, 0, 256*i);
-            terrain.transform.parent = parent.transform;
-            i++;
-            */
             if (z == 0){
                 Debug.Log("hi2");
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 100);
@@ -149,8 +138,8 @@ public class Ball : MonoBehaviour {
             }
             if (z==2){
                 Debug.Log("hi4");
-                GameObject.Find("Terrain0").transform.position = new Vector3(0, 0, 256 * i -100);
-                  GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i -100);
+                GameObject.Find("Terrain").transform.position = new Vector3(0, 0, (256 * i-100));
+                GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i-100);
                 //Generate random num with min and max
                 int min = 256*x;
                 int max = 256*x+256;
@@ -168,7 +157,9 @@ public class Ball : MonoBehaviour {
             }
 
             //Collider
+
           
+
 
 
 
@@ -200,17 +191,6 @@ public class Ball : MonoBehaviour {
 
             }
 
-
-
-
-
-
-            /*
-            Collider.OnCollisionEnter();
-              Collider.OnCollisionExit();
-              Collider.OnCollisionStay();
-
-              */
 
 
             if (GameObject.Find("Sphere").transform.position.y < -10)
