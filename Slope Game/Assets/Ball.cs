@@ -72,11 +72,12 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
         }
         Debug.Log(score);
-        if (score == 100*i)
+        if (score > 1000*i)
         {
             speed = speed + 10;
             score = 0;
         }
+
         transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
 
 
@@ -98,7 +99,7 @@ public class Ball : MonoBehaviour {
         }
         if (GameObject.Find("Sphere").transform.position.z>(256*i -100)) {
             Debug.Log("hi");
-
+            //transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
             if (z == 0){
                 Debug.Log("hi2");
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 100);
@@ -110,11 +111,11 @@ public class Ball : MonoBehaviour {
 
 
                 int rand = Random.Range(min, max);
-                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand-21);
+                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand-21);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand- 80);
+                GameObject.Find("Cube1").transform.position = new Vector3(10, 2, rand- 80);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand-120);
+                GameObject.Find("Cube2").transform.position = new Vector3(10, 2, rand-120);
                 speedup++;
                 x++;
             }
@@ -133,11 +134,11 @@ public class Ball : MonoBehaviour {
                 int rand = Random.Range(min, max);
 
 
-                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand);
+                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(10, 5, rand);
+                GameObject.Find("Cube1").transform.position = new Vector3(10, 2, rand);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand);
+                GameObject.Find("Cube2").transform.position = new Vector3(10, 2, rand);
                 speedup++;
                 x++;
             }
@@ -150,11 +151,11 @@ public class Ball : MonoBehaviour {
                 int max = 256*x+256;
 
                 int rand = Random.Range(min, max);
-                GameObject.Find("Cube").transform.position = new Vector3(10, 5, rand );
+                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand );
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(20, 5, rand);
+                GameObject.Find("Cube1").transform.position = new Vector3(20, 2, rand);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 5, rand);
+                GameObject.Find("Cube2").transform.position = new Vector3(10,2, rand);
                 speedup++;
                 z=0;
                 i++;
@@ -169,7 +170,7 @@ public class Ball : MonoBehaviour {
 
 
 
-            void OnTriggerEnter(Collider other) {
+            void OnCollisionStay(Collider other) {
               Debug.Log("COLLIDED");
                 if (other.gameObject.name == "Cube")
                 {
