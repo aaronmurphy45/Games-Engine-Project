@@ -139,7 +139,7 @@ public class Ball : MonoBehaviour {
 
 	 void Update()
     {
-        //MyText.text = "" + score;
+        GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
         //score = score + 1;
         //scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.Space))
