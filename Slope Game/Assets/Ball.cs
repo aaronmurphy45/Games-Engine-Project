@@ -77,6 +77,30 @@ public class Ball : MonoBehaviour {
                     audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
+                if (other.gameObject.name == "Cube5")
+                {
+                    //Destroy(other.gameObject);
+                    score = score + 10;
+                    GameObject.Find("Cube5").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "Cube6")
+                {
+                    //Destroy(other.gameObject);
+                    score = score + 10;
+                    GameObject.Find("Cube6").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "Cube7")
+                {
+                    //Destroy(other.gameObject);
+                    score = score + 10;
+                    GameObject.Find("Cube7").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
 
             }
 
@@ -174,6 +198,12 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-140);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-160);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-180);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-200);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-220);
                 speedup++;
                 x++;
             }
@@ -201,6 +231,13 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-150);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-200);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-250);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-300);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-350);
+            
                 speedup++;
                 x++;
             }
@@ -222,7 +259,12 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-150);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-200);
-
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-250);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-300);
+                rand = Random.Range(min, max);
+                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-350);
                 speedup++;
                 z=0;
                 i++;
