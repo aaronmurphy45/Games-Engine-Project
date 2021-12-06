@@ -29,28 +29,34 @@ public class Ball : MonoBehaviour {
   public int z = 0;
  public int dif1 = 0;
  public int speedup = 1;
-  AudioSource audioData; //=// "Assets/66772__kevinkace__barrel-break-4.wav";
 
-   void OnTriggerEnter(Collider other) {
+ public Text MyText;
+
+ AudioSource audio;
+     void OnTriggerEnter(Collider other) {
               Debug.Log("COLLIDED");
                 if (other.gameObject.name == "Cube")
                 {
-                    Destroy(other.gameObject);
+                    //Destroy(other.gameObject);
                     score = score + 10;
-                    audioData.Play();
+                    GameObject.Find("Cube").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (other.gameObject.name == "Cube1")
                 {
-                    Destroy(other.gameObject);
+                    //Destroy(other.gameObject);
                     score = score + 10;
-                     audioData.Play();
+                    GameObject.Find("Cube1").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                     audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (other.gameObject.name == "Cube2")
                 {
-                    Destroy(other.gameObject);
-                    audioData.Play();
+                    //Destroy(other.gameObject);
+                    
+                    GameObject.Find("Cube2").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
                     score = score + 10;
                     //scoreText.text = "Score: " + score;
                 }
@@ -59,7 +65,7 @@ public class Ball : MonoBehaviour {
 
 
 	void Start () {
-        audioData = GetComponent<AudioSource>();
+         MyText.text = "";
 	}
 
     int Score()
@@ -91,7 +97,8 @@ public class Ball : MonoBehaviour {
 
 	 void Update()
     {
-        score = score + 1;
+        //MyText.text = "" + score;
+        //score = score + 1;
         //scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -101,7 +108,7 @@ public class Ball : MonoBehaviour {
         if (score > 1000*i)
         {
             speed = speed + 10;
-            score = 0;
+            
         }
         // if ball is not in other component
 
