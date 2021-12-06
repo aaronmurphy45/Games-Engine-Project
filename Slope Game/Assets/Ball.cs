@@ -152,12 +152,13 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
             
         }
-        // if ball is not in other component
+
 
 
        
         transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
-
+        //GameObject.Find("Sphere").transform.Rotate(Vector3.forward, rotSpeed * Time.deltaTime);
+        //GameObject.Find("Sphere").transform.Rotate(Vector3.right, rotSpeed * Time.deltaTime);
 
         //Detect if the left mouse button is pressed
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -275,14 +276,11 @@ public class Ball : MonoBehaviour {
 
           
             
-            
-
-           
-
-
-            if (GameObject.Find("Sphere").transform.position.y < -10)
+    /*
+            if (GameObject.Find("Sphere").transform.position.y <(-100));
             {
                 // print Game Over
+                Debug.Log("Game Over");
                 Application.LoadLevel(Application.loadedLevel);
 
                 speed = 0;
@@ -290,6 +288,7 @@ public class Ball : MonoBehaviour {
 
 
             }
+        */
 
 
         }
