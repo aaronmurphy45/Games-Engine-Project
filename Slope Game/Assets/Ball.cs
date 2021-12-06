@@ -31,6 +31,33 @@ public class Ball : MonoBehaviour {
  public int speedup = 1;
   AudioSource audioData; //=// "Assets/66772__kevinkace__barrel-break-4.wav";
 
+   void OnTriggerEnter(Collider other) {
+              Debug.Log("COLLIDED");
+                if (other.gameObject.name == "Cube")
+                {
+                    Destroy(other.gameObject);
+                    score = score + 10;
+                    audioData.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "Cube1")
+                {
+                    Destroy(other.gameObject);
+                    score = score + 10;
+                     audioData.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "Cube2")
+                {
+                    Destroy(other.gameObject);
+                    audioData.Play();
+                    score = score + 10;
+                    //scoreText.text = "Score: " + score;
+                }
+
+            }
+
+
 	void Start () {
         audioData = GetComponent<AudioSource>();
 	}
@@ -64,7 +91,6 @@ public class Ball : MonoBehaviour {
 
 	 void Update()
     {
-
         score = score + 1;
         //scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.Space))
@@ -77,7 +103,10 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
             score = 0;
         }
+        // if ball is not in other component
 
+
+       
         transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
 
 
@@ -165,37 +194,10 @@ public class Ball : MonoBehaviour {
             //Collider
 
           
+            
+            
 
-
-
-
-
-            void OnCollisionStay(Collider other) {
-              Debug.Log("COLLIDED");
-                if (other.gameObject.name == "Cube")
-                {
-                    Destroy(other.gameObject);
-                    score = score + 10;
-                    audioData.Play();
-                    //scoreText.text = "Score: " + score;
-                }
-                if (other.gameObject.name == "Cube1")
-                {
-                    Destroy(other.gameObject);
-                    score = score + 10;
-                     audioData.Play();
-                    //scoreText.text = "Score: " + score;
-                }
-                if (other.gameObject.name == "Cube2")
-                {
-                    Destroy(other.gameObject);
-                    audioData.Play();
-                    score = score + 10;
-                    //scoreText.text = "Score: " + score;
-                }
-
-            }
-
+           
 
 
             if (GameObject.Find("Sphere").transform.position.y < -10)
