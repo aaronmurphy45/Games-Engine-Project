@@ -33,6 +33,20 @@ public class Ball : MonoBehaviour {
  public Text MyText;
 
  AudioSource audio;
+ AudioSource audio2;
+   
+     IEnumerator SpecialEffect(){
+        Material mat = Resources.Load("Special", typeof(Material)) as Material;
+        Debug.Log(mat);
+        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
+        score = score + 10;
+        GameObject.Find("Magic Box").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        speed = 150;
+        yield return new WaitForSecondsRealtime(5);
+        speed = 100;
+        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("Default", typeof(Material)) as Material;
+        
+     }
      void OnTriggerEnter(Collider other) {
               Debug.Log("COLLIDED");
                 if (other.gameObject.name == "Cube")
@@ -101,12 +115,34 @@ public class Ball : MonoBehaviour {
                     audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
+                if (other.gameObject.name == "Magic Box")
+                {
+                    //Destroy(other.gameObject);
+                    //Assets/Ball.cs(109,56): error CS1061: 'Component' does not contain a definition for 'material' and no accessible extension method 'material' accepting a first argument of type 'Component' could be found (are you missing a using directive or an assembly reference?)
+
+                    //score = score + 10;
+
+                    StartCoroutine(SpecialEffect());
+                    //scoreText.text = "Score: " + score;
+
+                }
+                   
+                
 
             }
 
 
 	void Start () {
+        /*
+        audio2 = GetComponent<AudioSource>();
+        audio2.Play();
+        audio2.loop = true;*/
         audio = GameObject.FindObjectOfType<AudioSource>();
+        //audio = GetComponent<AudioSource>();
+        audio2 = GameObject.Find("song").GetComponent<AudioSource>();
+        audio2.Play();
+        audio2.loop = true;
+        
         MyText.text = "";
 	}
 
@@ -152,6 +188,8 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
             
         }
+
+
 
 
 
@@ -271,6 +309,7 @@ public class Ball : MonoBehaviour {
                 i++;
                 x++;
             }
+
 
             //Collider
 
