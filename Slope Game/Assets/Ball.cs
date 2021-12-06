@@ -72,6 +72,11 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
         }
         Debug.Log(score);
+        if (score == 100*i)
+        {
+            speed = speed + 10;
+            score = 0;
+        }
         transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
 
 
@@ -91,7 +96,7 @@ public class Ball : MonoBehaviour {
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
-        if (GameObject.Find("Sphere").transform.position.z>(256*i - 50)) {
+        if (GameObject.Find("Sphere").transform.position.z>(256*i -100)) {
             Debug.Log("hi");
 
             if (z == 0){
@@ -164,26 +169,25 @@ public class Ball : MonoBehaviour {
 
 
 
-            void OnTriggerStay(Collision collision)
-            {
+            void OnTriggerEnter(Collider other) {
               Debug.Log("COLLIDED");
-                if (collision.gameObject.name == "Cube")
+                if (other.gameObject.name == "Cube")
                 {
-                    Destroy(collision.gameObject);
+                    Destroy(other.gameObject);
                     score = score + 10;
                     audioData.Play();
                     //scoreText.text = "Score: " + score;
                 }
-                if (collision.gameObject.name == "Cube1")
+                if (other.gameObject.name == "Cube1")
                 {
-                    Destroy(collision.gameObject);
+                    Destroy(other.gameObject);
                     score = score + 10;
                      audioData.Play();
                     //scoreText.text = "Score: " + score;
                 }
-                if (collision.gameObject.name == "Cube2")
+                if (other.gameObject.name == "Cube2")
                 {
-                    Destroy(collision.gameObject);
+                    Destroy(other.gameObject);
                     audioData.Play();
                     score = score + 10;
                     //scoreText.text = "Score: " + score;
