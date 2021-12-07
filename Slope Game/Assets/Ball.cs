@@ -129,6 +129,38 @@ public class Ball : MonoBehaviour {
                     //scoreText.text = "Score: " + score;
 
                 }
+                if (other.gameObject.name == "GlassBox1")
+                {
+                    //Destroy(other.gameObject);
+                    score = score -50;
+                    GameObject.Find("Cube8").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "GlassBox2")
+                {
+                    //Destroy(other.gameObject);
+                    score = score -50;
+                    GameObject.Find("Cube9").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "GlassBox3")
+                {
+                    //Destroy(other.gameObject);
+                    score = score -50;
+                    GameObject.Find("Cube10").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
+                if (other.gameObject.name == "GlassBox4")
+                {
+                    //Destroy(other.gameObject);
+                    score = score -50;
+                    GameObject.Find("Cube11").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audio.Play();
+                    //scoreText.text = "Score: " + score;
+                }
                    
                 
 
@@ -232,21 +264,29 @@ public class Ball : MonoBehaviour {
 
 
                 int rand = Random.Range(min, max);
-                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand-100);
+                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand-100 );
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(10, 2, rand- 80);
+                GameObject.Find("Cube1").transform.position = new Vector3(20, 2, rand-100);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 2, rand-120);
+                GameObject.Find("Cube2").transform.position = new Vector3(11,2, rand-100);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-140);
+                GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-150);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-160);
+                GameObject.Find("Cube4").transform.position = new Vector3(14, 2, rand-200);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-180);
+                GameObject.Find("Cube5").transform.position = new Vector3(19, 2, rand-250);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-200);
+                GameObject.Find("Cube6").transform.position = new Vector3(20, 2, rand-300);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-220);
+                GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
+                 rand = Random.Range(min, max);
+                GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox2").transform.position = new Vector3(20, 2, rand-180);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox3").transform.position = new Vector3(16, 2, rand-280);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox4").transform.position = new Vector3(18, 2, rand-200);
                 speedup++;
                 x++;
             }
@@ -266,23 +306,29 @@ public class Ball : MonoBehaviour {
                 int rand = Random.Range(min, max);
 
 
-                GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand-100);
+               GameObject.Find("Cube").transform.position = new Vector3(10, 2, rand-100 );
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube1").transform.position = new Vector3(10, 2, rand-100);
+                GameObject.Find("Cube1").transform.position = new Vector3(20, 2, rand-100);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10, 2, rand-100);
+                GameObject.Find("Cube2").transform.position = new Vector3(11,2, rand-100);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-150);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-200);
+                GameObject.Find("Cube4").transform.position = new Vector3(14, 2, rand-200);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-250);
+                GameObject.Find("Cube5").transform.position = new Vector3(19, 2, rand-250);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-300);
+                GameObject.Find("Cube6").transform.position = new Vector3(20, 2, rand-300);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-350);
+                GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
+                 rand = Random.Range(min, max);
+                GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
                 rand = Random.Range(min, max);
-                GameObject.Find("Magic Box").transform.position = new Vector3(10, 2, rand-400);
+                GameObject.Find("GlassBox2").transform.position = new Vector3(20, 2, rand-180);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox3").transform.position = new Vector3(16, 2, rand-280);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox4").transform.position = new Vector3(18, 2, rand-200);
             
                 speedup++;
                 x++;
@@ -301,17 +347,25 @@ public class Ball : MonoBehaviour {
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube1").transform.position = new Vector3(20, 2, rand-100);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube2").transform.position = new Vector3(10,2, rand-100);
+                GameObject.Find("Cube2").transform.position = new Vector3(11,2, rand-100);
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube3").transform.position = new Vector3(10, 2, rand-150);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube4").transform.position = new Vector3(10, 2, rand-200);
+                GameObject.Find("Cube4").transform.position = new Vector3(14, 2, rand-200);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube5").transform.position = new Vector3(10, 2, rand-250);
+                GameObject.Find("Cube5").transform.position = new Vector3(19, 2, rand-250);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube6").transform.position = new Vector3(10, 2, rand-300);
+                GameObject.Find("Cube6").transform.position = new Vector3(20, 2, rand-300);
                 rand = Random.Range(min, max);
-                GameObject.Find("Cube7").transform.position = new Vector3(10, 2, rand-350);
+                GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
+                 rand = Random.Range(min, max);
+                GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox2").transform.position = new Vector3(20, 2, rand-180);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox3").transform.position = new Vector3(16, 2, rand-280);
+                rand = Random.Range(min, max);
+                GameObject.Find("GlassBox4").transform.position = new Vector3(18, 2, rand-200);
                 speedup++;
                 z=0;
                 i++;
