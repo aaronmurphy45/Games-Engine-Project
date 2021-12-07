@@ -56,7 +56,15 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube")
                 {
                     //Destroy(other.gameObject);
+                    Debug.Log(GameObject.Find("Cube").transform.position);
+                    Vector3 pos = GameObject.Find("Cube").transform.position;
+                    Debug.Log(pos);
+                    GameObject.Find("Cracked").transform.position = pos;
+                    
+                    //GameObject.Find("Cracked").transform.position = v;
+                    
                     score = score + 10;
+                    
                     GameObject.Find("Cube").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
@@ -64,15 +72,24 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube1")
                 {
                     //Destroy(other.gameObject);
+                    //var z = GameObject.Find("Cube1").transform.position;
+                  
+                    
+                    //GameObject.Find("Cracked").transform.position = z;
+
                     score = score + 10;
+                    //GameObject.Find("Cracked").transform.position = GameObject.Find("Cube1").transform.position;
                     GameObject.Find("Cube1").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                      audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (other.gameObject.name == "Cube2")
                 {
-                    //Destroy(other.gameObject);
+                    //var z = GameObject.Find("Cube2").transform.position;
+                  
                     
+                    //GameObject.Find("Cracked").transform.position = z;
+
                     GameObject.Find("Cube2").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     score = score + 10;
@@ -82,15 +99,26 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube3")
                 {
                     //Destroy(other.gameObject);
-                    score = score + 10;
+                   //var z = GameObject.Find("Cube3").transform.position;
+                  
+                    
+                    //GameObject.Find("Cracked").transform.position = z;
+
+                    
+                    //GameObject.Find("Cracked").transform.position = v;
+                     score = score + 10;
                     GameObject.Find("Cube3").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
                 if (other.gameObject.name == "Cube4")
                 {
-                    //Destroy(other.gameObject);
-                    score = score + 10;
+                    //var z = GameObject.Find("Cube4").transform.position;
+                  
+                    
+                    //GameObject.Find("Cracked").transform.position = z;
+
+                     score = score + 10;
                     GameObject.Find("Cube4").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
@@ -98,7 +126,9 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube5")
                 {
                     //Destroy(other.gameObject);
-                    score = score + 10;
+                  
+                    //GameObject.Find("Cracked").transform.position = GameObject.Find("Cube5").transform.position;
+                     score = score + 10;
                     GameObject.Find("Cube5").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
@@ -106,6 +136,9 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube6")
                 {
                     //Destroy(other.gameObject);
+                  
+                    //GameObject.Find("Cracked").transform.position = GameObject.Find("Cube6").transform.position;
+                     
                     score = score + 10;
                     GameObject.Find("Cube6").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
@@ -114,7 +147,9 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "Cube7")
                 {
                     //Destroy(other.gameObject);
-                    score = score + 10;
+                
+                    //GameObject.Find("Cracked").transform.position = GameObject.Find("Cube7").transform.position;
+                     score = score + 10;
                     GameObject.Find("Cube7").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
@@ -152,6 +187,7 @@ public class Ball : MonoBehaviour {
                     else{
                         score = score - 50;
                     }
+                    
                     GameObject.Find("GlassBox2").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audio.Play();
                     //scoreText.text = "Score: " + score;
@@ -418,7 +454,7 @@ public class Ball : MonoBehaviour {
                     SceneManager.LoadScene("GameOver");
                 }
                 */
-
+               
 
             }
 
