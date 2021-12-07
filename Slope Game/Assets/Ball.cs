@@ -192,6 +192,7 @@ public class Ball : MonoBehaviour {
         audio2.Play();
         audio2.loop = true;*/
         audio = GameObject.FindObjectOfType<AudioSource>();
+        GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
         //audio = GetComponent<AudioSource>();
         audio2 = GameObject.Find("song").GetComponent<AudioSource>();
         audio2.Play();
@@ -230,7 +231,7 @@ public class Ball : MonoBehaviour {
 	 void Update()
     {
         GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
-        GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
+        
         //score = score + 1;
         //scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.Space))
@@ -397,31 +398,20 @@ public class Ball : MonoBehaviour {
             if (GameObject.Find("Sphere").transform.position.y < -10)
             {
                 Debug.Log("hiXX");
-                lives--;
+                lives = lives-1;
+                Debug.Log(lives);
                 GameObject.Find("Sphere").transform.position = new Vector3(10, 5, 256*i);
                 GameObject.Find("Camera").transform.position = new Vector3(10, 5, 256*i-10);
                 GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
-
-
-
-            }
-          
-            
-        /*
-            if (GameObject.Find("Sphere").transform.position.y<(-100)){
-               
+                /*
                 if (lives == 0)
                 {
-                    Debug.Log("Game Over");
+                    SceneManager.LoadScene("GameOver");
                 }
-                else
-                {
-                    lives--;
-                    GameObject.Find("Sphere").transform.position = new Vector3(15, 2, 256 * i - 100);
-                    
-                }
+                */
+
+
             }
-            */
 
         }
     
