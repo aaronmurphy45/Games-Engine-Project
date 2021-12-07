@@ -30,6 +30,8 @@ public class Ball : MonoBehaviour {
  public int dif1 = 0;
  public int speedup = 1;
 
+ public int lives = 3;
+
  public Text MyText;
 
  AudioSource audio;
@@ -44,7 +46,7 @@ public class Ball : MonoBehaviour {
         speed = 150;
         yield return new WaitForSecondsRealtime(5);
         speed = 100;
-        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("Default", typeof(Material)) as Material;
+        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
      }
      void OnTriggerEnter(Collider other) {
@@ -176,6 +178,7 @@ public class Ball : MonoBehaviour {
 	 void Update()
     {
         GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
+        GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
         //score = score + 1;
         //scoreText.text = "Score: " + score;
         if (Input.GetKeyDown(KeyCode.Space))
@@ -315,20 +318,21 @@ public class Ball : MonoBehaviour {
 
           
             
-    /*
-            if (GameObject.Find("Sphere").transform.position.y <(-100));
+    
+            if (GameObject.Find("Sphere").transform.position.y<(-100));
             {
                 // print Game Over
-                Debug.Log("Game Over");
-                Application.LoadLevel(Application.loadedLevel);
-
-                speed = 0;
-                Application.LoadLevel("GameOver");
-
-
+                if (lives == 0)
+                {
+                    Debug.Log("Game Over");
+                }
+                else
+                {
+                    lives--;
+                   Application.LoadLevel(Application.loadedLevel);
+                    speed = 0;
+                }
             }
-        */
-
 
         }
 
