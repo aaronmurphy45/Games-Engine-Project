@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour {
   public int z = 0;
  public int dif1 = 0;
  public int speedup = 1;
- public int angspeed = 0;
+ public int angspeed = 2;
 
  public int lives = 3;
 
@@ -206,7 +206,7 @@ public class Ball : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             //Move object across XY plane
-            transform.Translate(Vector3.left * speed * Time.deltaTime / angspeed);
+            transform.Translate(Vector3.left *Time.deltaTime *5);
             //transform.Rotate(0, Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
 
@@ -214,7 +214,7 @@ public class Ball : MonoBehaviour {
         if (Input.GetKey(KeyCode.RightArrow))
         {
             //Move object across XY plane
-            transform.Translate(Vector3.right * speed * Time.deltaTime / angspeed);
+            transform.Translate(Vector3.right * Time.deltaTime *5);
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
