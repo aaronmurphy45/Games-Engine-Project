@@ -391,6 +391,15 @@ public class Ball : MonoBehaviour {
                 i++;
                 x++;
             }
+            if (GameObject.Find("Sphere").transform.rotation.z!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (GameObject.Find("Sphere").transform.rotation.y!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            if (GameObject.Find("Sphere").transform.rotation.x!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
 
 
             //Collider
