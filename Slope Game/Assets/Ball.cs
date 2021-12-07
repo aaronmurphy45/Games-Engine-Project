@@ -41,7 +41,6 @@ public class Ball : MonoBehaviour {
    
      IEnumerator SpecialEffect(){
         Material mat = Resources.Load("Special", typeof(Material)) as Material;
-        Debug.Log(mat);
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
         score = score + 10;
         GameObject.Find("Magic Box").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
@@ -54,7 +53,6 @@ public class Ball : MonoBehaviour {
         
      }
      void OnTriggerEnter(Collider other) {
-              Debug.Log("COLLIDED");
                 if (other.gameObject.name == "Cube")
                 {
                     //Destroy(other.gameObject);
@@ -239,7 +237,6 @@ public class Ball : MonoBehaviour {
         {
             speed = speed + 10;
         }
-        Debug.Log(score);
         if (score > 1000*i)
         {
             speed = speed + 10;
@@ -272,10 +269,9 @@ public class Ball : MonoBehaviour {
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
         }
         if (GameObject.Find("Sphere").transform.position.z>(256*i -100)) {
-            Debug.Log("hi");
-            //transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
+         //transform.position += Vector3.forward * Time.deltaTime * speed ;//* speedup;
             if (z == 0){
-                Debug.Log("hi2");
+    
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 100);
                 GameObject.Find("SpikedTerrain2").transform.position = new Vector3(-112, -200, 256 * i - 100);
                 z++;
@@ -312,7 +308,7 @@ public class Ball : MonoBehaviour {
                 x++;
             }
             if (z==1){
-                Debug.Log("hi3");
+
             
                 GameObject.Find("Terrain1").transform.position = new Vector3(0, 0, 256 * i - 100);
                 GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-112, -200, 256 * i -100);
@@ -355,7 +351,7 @@ public class Ball : MonoBehaviour {
                 x++;
             }
             if (z==2){
-                Debug.Log("hi4");
+   
                
                 GameObject.Find("Terrain").transform.position = new Vector3(0, 0, (256 * i-100));
                 GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i-100);
@@ -397,12 +393,23 @@ public class Ball : MonoBehaviour {
 
 
             //Collider
+            
+            if (GameObject.Find("Sphere").transform.position.y < -10)
+            {
+                Debug.Log("hiXX");
+                lives--;
+                GameObject.Find("Sphere").transform.position = new Vector3(10, 5, 256*i);
+                GameObject.Find("Camera").transform.position = new Vector3(10, 5, 256*i-10);
+                GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
 
+
+
+            }
           
             
         /*
-            if (GameObject.Find("Sphere").transform.position.y<(-100));
-            {
+            if (GameObject.Find("Sphere").transform.position.y<(-100)){
+               
                 if (lives == 0)
                 {
                     Debug.Log("Game Over");
@@ -411,13 +418,14 @@ public class Ball : MonoBehaviour {
                 {
                     lives--;
                     GameObject.Find("Sphere").transform.position = new Vector3(15, 2, 256 * i - 100);
-                    speed = 0;
+                    
                 }
             }
+            */
 
         }
-        */
-        }
+    
+        
 
 
     }
