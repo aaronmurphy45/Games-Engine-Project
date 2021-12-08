@@ -310,7 +310,7 @@ public class Ball : MonoBehaviour {
             if (z == 0){
     
                 GameObject.Find("Terrain2").transform.position = new Vector3(0, 0, 256 * i - 100);
-                GameObject.Find("SpikedTerrain2").transform.position = new Vector3(-112, -200, 256 * i - 100);
+                GameObject.Find("SpikedTerrain2").transform.position = new Vector3(-167, -220, 256 * i - 100);
                 z++;
                 i++;
                 int min = 256*x;
@@ -348,7 +348,7 @@ public class Ball : MonoBehaviour {
 
             
                 GameObject.Find("Terrain1").transform.position = new Vector3(0, 0, 256 * i - 100);
-                GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-112, -200, 256 * i -100);
+                GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-167, -220, 256 * i -100);
                 GameObject.Find("TunnelRight").transform.position = new Vector3(29, 5, 256 * i - 100);
                 GameObject.Find("TunnelLeft").transform.position = new Vector3(3, 5, 256 * i - 100);
                 GameObject.Find("TunnelTop").transform.position = new Vector3(15, 10, 256 * i - 100);
@@ -391,7 +391,7 @@ public class Ball : MonoBehaviour {
    
                
                 GameObject.Find("Terrain").transform.position = new Vector3(0, 0, (256 * i-100));
-                GameObject.Find("SpikedTerrain").transform.position = new Vector3(-112, -200, 256 * i-100);
+                GameObject.Find("SpikedTerrain").transform.position = new Vector3(-167, -220, 256 * i-100);
                 //Generate random num with min and max
                 int min = 256*x;
                 int max = 256*x+256;
