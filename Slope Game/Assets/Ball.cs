@@ -57,7 +57,7 @@ public class Ball : MonoBehaviour {
                 {
                     //Destroy(other.gameObject);
                     Debug.Log(GameObject.Find("Cube").transform.position);
-                    Vector3 pos = GameObject.Find("Cube").transform.position;
+                    var pos = GameObject.Find("Cube").transform.position;
                     Debug.Log(pos);
                     GameObject.Find("Cracked").transform.position = pos;
                     
