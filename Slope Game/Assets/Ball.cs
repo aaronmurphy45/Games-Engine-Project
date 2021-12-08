@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour {
         speed = 150;
         checker = 1;
         yield return new WaitForSecondsRealtime(5);
-        speed = 100;
+        speed = 10;
         checker = 0;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
@@ -216,6 +216,7 @@ public class Ball : MonoBehaviour {
                     audio.Play();
                     //scoreText.text = "Score: " + score;
                 }
+                
                    
                 
 
