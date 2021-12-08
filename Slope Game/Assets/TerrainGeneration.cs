@@ -1,3 +1,7 @@
+
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 public class TerrainGeneration : MonoBehaviour
 {
 
@@ -7,6 +11,9 @@ public class TerrainGeneration : MonoBehaviour
     public float offsetX = 100f;
     public float offsetY = 100f;
     public float offsetZ = 100f;
+    public int i = 1;
+    public int z = 0;
+
     public TerrainGeneration(){
         void Start(){
         }
