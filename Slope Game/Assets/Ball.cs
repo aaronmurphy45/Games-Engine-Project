@@ -52,6 +52,7 @@ public class Ball : MonoBehaviour {
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
      }
+     
      void OnTriggerEnter(Collider other) {
                 if (other.gameObject.name == "Cube")
                 {
@@ -223,7 +224,7 @@ public class Ball : MonoBehaviour {
                 
 
             }
-
+        
 
 	void Start () {
         /*

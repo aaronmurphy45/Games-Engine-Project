@@ -4297,7 +4297,6 @@ GameObject:
   - component: {fileID: 2040247487}
   - component: {fileID: 2040247486}
   - component: {fileID: 2040247488}
-  - component: {fileID: 2040247489}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4386,20 +4385,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2040247489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040247484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b324f4fe063f4434b14f3b7e790bec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sphere: {fileID: 0}
-  distanceFromObject: 7
 --- !u!1 &2139971255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1168907351885854, guid: b3dc6d5c1ab8158418b2f82094975753,

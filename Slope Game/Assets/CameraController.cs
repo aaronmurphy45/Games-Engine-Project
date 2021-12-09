@@ -5,7 +5,7 @@ using System;
 
 public class CameraController : MonoBehaviour{
     public Transform Sphere;
-    public float distanceFromObject = 7f;
+    public float distanceFromObject = 100f;
     void Update()
     {
 
@@ -16,6 +16,6 @@ public class CameraController : MonoBehaviour{
         SphereLastPosition = Sphere.position - lookOnObject.normalized * distanceFromObject;
         SphereLastPosition.y = Sphere.position.y + distanceFromObject / 2;
         transform.position = SphereLastPosition;
-        
+
     }
 }
