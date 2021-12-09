@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour {
 
  AudioSource audio;
  AudioSource audio2;
-   
+  
      IEnumerator SpecialEffect(){
         Material mat = Resources.Load("Special", typeof(Material)) as Material;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
@@ -52,6 +52,7 @@ public class Ball : MonoBehaviour {
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
      }
+     
      
      void OnTriggerEnter(Collider other) {
                 if (other.gameObject.name == "Cube")

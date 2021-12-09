@@ -3,24 +3,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 public class Crate : MonoBehaviour {
-    public AudioSource audio;
+    public AudioClip audio;
     //public GameObject Cube;
     public GameObject cube;
 
+    public AudioSource audioSource;
+
     void OnTriggerEnter(Collider other) {
-        Debug.Log("Crate: OnTriggerEnter");
-        Debug.Log(other.gameObject);
-        //if (other.gameObject == cube) {
+        if (other.gameObject.name == "Sphere") {
             Debug.Log("Crate: OnTriggerEnter: cube");
             cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-            audio.Play();
+            audioSource.clip = audio;
+            audioSource.Play();
             //score = score + 10;
-        //}
+        }
 
 
     }
     void Start(){
-        audio = GetComponent<AudioSource>();
+        //audio = Resources.Load<AudioClip>("66772__kevinkace__barrel-break-4");
+        audioSource.clip = audio;
     }
     void Update(){
 

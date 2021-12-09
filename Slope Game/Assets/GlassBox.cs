@@ -5,9 +5,16 @@ using System.Collections;
 
 public class GlassBox : MonoBehaviour {
 
-    AudioSource audio;
+    
+    public AudioClip glassSound;
+    public AudioSource audioSource;
+    public GameObject glass;
+
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "GlassBox1") {
+        Debug.Log("GlassBox: OnTriggerEnter");
+        Debug.Log(other.name);
+       //Debug.Log("GlassBox: other.tag = " + other.gameObject.tag);
+        if (other.name == "Sphere") {
             /*
             if (checker==1){
                         score = score + 10;
@@ -17,49 +24,13 @@ public class GlassBox : MonoBehaviour {
                     }
                     */
                     
-                    GameObject.Find("GlassBox1").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-                    audio.Play();
-        }
-        if (other.gameObject.tag == "GlassBox2") {
-            /*
-            if (checker==2){
-                        score = score + 10;
-                    }
-                    else{
-                        score = score - 50;
-                    }
-                    */
-                    
-                    GameObject.Find("GlassBox2").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-                    audio.Play();
-        }
-        if (other.gameObject.tag == "GlassBox3") {
-            /*
-            if (checker==3){
-                        score = score + 10;
-                    }
-                    else{
-                        score = score - 50;
-                    }
-                    */
-                    
-                    GameObject.Find("GlassBox3").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-                    audio.Play();
-        }
-        if (other.gameObject.tag == "GlassBox4") {
-            /*
-            if (checker==4){
-                        score = score + 10;
-                    }
-                    else{
-                        score = score - 50;
-                    }
-                    */
-                    GameObject.Find("GlassBox4").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-                    audio.Play();
+                    glass.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                    audioSource.clip = glassSound;
+                    audioSource.Play();
         }
     }
     private void Start() {
+       audioSource.clip = glassSound;
         
     }
     private void Update() {
