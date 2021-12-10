@@ -97,8 +97,7 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox1")
                 {
-                   
-                    if (checker==1){
+                    if (checker!=1){
                         score = score + 10;
                     }
                     else{
@@ -108,7 +107,7 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox2")
                 {
-                    if (checker==1){
+                    if (checker!=1){
                         score = score + 10;
                     }
                     else{
@@ -118,7 +117,7 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox3")
                 {
-                     if (checker==1){
+                     if (checker!=1){
                         score = score + 10;
                     }
                     else{
@@ -127,7 +126,7 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox4")
                 {
-                     if (checker==1){
+                     if (checker!=1){
                         score = score + 10;
                     }
                     else{
@@ -176,6 +175,32 @@ public class Ball : MonoBehaviour {
 
 	 void Update()
     {
+        
+        Vector3 ballPos = GameObject.Find("Sphere").transform.position;
+        int camposx = (int)ballPos.x;
+        int camposy = (int)ballPos.y+ 5;
+        int camposz = (int)ballPos.z - 20;
+
+        while (camposx > ballPos.x){
+            camposx = camposx - 1;
+            GameObject.Find("Camera").transform.position = new Vector3(camposx, camposy, camposz);
+        }
+        while (camposx < ballPos.x){
+            camposx = camposx + 1;
+            GameObject.Find("Camera").transform.position = new Vector3(camposx, camposy, camposz);
+        }
+        /*
+        while (camposy > ballPos.y){
+            camposy = camposy - 1;
+            GameObject.Find("Camera").transform.position = new Vector3(camposx, camposy, camposz);
+        }
+        while (camposy < ballPos.y){
+            camposy = camposy + 1;
+            GameObject.Find("Camera").transform.position = new Vector3(camposx, camposy, camposz);
+        }
+        */
+
+        
         GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
         
         //score = score + 1;
@@ -189,9 +214,39 @@ public class Ball : MonoBehaviour {
             speed = speed + 10;
             
         }
+        /*
 
-        
+        if (GameObject.Find("Sphere").transform.rotation.z!=0){
+                GameObject.Find("Sphere").transform.rotation.z = 0;
+            }
+            if (GameObject.Find("Sphere").transform.rotation.y!=0){
+                GameObject.Find("Sphere").transform.rotation.y = 0;
+            }
+            if (GameObject.Find("Sphere").transform.rotation.x!=0){
+                GameObject.Find("Sphere").transform.rotation.x = 0;
+            }
 
+        */
+
+        if (GameObject.Find("Sphere").transform.rotation.z!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
+            }
+            if (GameObject.Find("Sphere").transform.rotation.y!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
+            }
+            if (GameObject.Find("Sphere").transform.rotation.x!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
+            }
+
+        if (GameObject.Find("Camera").transform.rotation.z!=-6){
+                GameObject.Find("Camera").transform.rotation = Quaternion.Euler(6,-3,-6);
+            }
+            if (GameObject.Find("Camera").transform.rotation.y!=-3){
+                GameObject.Find("Camera").transform.rotation = Quaternion.Euler(6,-3,-6);
+            }
+            if (GameObject.Find("Camera").transform.rotation.x!=6){
+                GameObject.Find("Camera").transform.rotation = Quaternion.Euler(6,-3,-6);
+            }
 
 
        
@@ -342,15 +397,7 @@ public class Ball : MonoBehaviour {
                 i++;
                 x++;
             }
-            if (GameObject.Find("Sphere").transform.rotation.z!=0){
-                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            if (GameObject.Find("Sphere").transform.rotation.y!=0){
-                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            if (GameObject.Find("Sphere").transform.rotation.x!=0){
-                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            
 
 
             //Collider
