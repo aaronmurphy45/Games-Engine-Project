@@ -15,14 +15,14 @@ public class GlassBox : MonoBehaviour {
         Debug.Log(other.name);
        //Debug.Log("GlassBox: other.tag = " + other.gameObject.tag);
         if (other.name == "Sphere") {
-            /*
+            
             if (checker==1){
                         score = score + 10;
                     }
                     else{
                         score = score - 50;
                     }
-                    */
+
                     
                     glass.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
                     audioSource.clip = glassSound;
