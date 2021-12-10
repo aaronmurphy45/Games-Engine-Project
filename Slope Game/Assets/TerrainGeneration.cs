@@ -18,6 +18,8 @@ public class TerrainGeneration : MonoBehaviour
     public GameObject terrain;
     public GameObject spikedTerrain;
 
+    public GameObject streetlight;
+
     
     
 
