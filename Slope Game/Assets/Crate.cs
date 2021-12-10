@@ -14,7 +14,14 @@ public class Crate : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "Sphere") {
             Debug.Log("Crate: OnTriggerEnter: cube");
-            cracked.transform.position = cube.transform.position;
+            
+
+            float posx = cube.transform.position.x;
+            float posz = cube.transform.position.z;
+            float posy = cube.transform.position.y;
+
+            cracked.transform.position = new Vector3(posx, posy, posz+5);
+
             cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
             audioSource.clip = audio;
             audioSource.Play();

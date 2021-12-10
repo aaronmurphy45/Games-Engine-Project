@@ -175,7 +175,7 @@ public class Ball : MonoBehaviour {
 
 	 void Update()
     {
-        
+        /*
         Vector3 ballPos = GameObject.Find("Sphere").transform.position;
         int camposx = (int)ballPos.x;
         int camposy = (int)ballPos.y+ 5;
@@ -227,6 +227,7 @@ public class Ball : MonoBehaviour {
             }
 
         */
+        
 
         if (GameObject.Find("Sphere").transform.rotation.z!=0){
                 GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
