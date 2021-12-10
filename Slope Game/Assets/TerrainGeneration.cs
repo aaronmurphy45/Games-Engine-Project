@@ -27,7 +27,7 @@ public class TerrainGeneration : MonoBehaviour
         }
     }
     void Update(){
-            if (sphere.transform.position.z > (256*i)-100){
+            if (sphere.transform.position.z > (256*i)-256){
                     terrain.transform.position = new Vector3(0, 0, 256 * i - 100);
                     spikedTerrain.transform.position = new Vector3(-167, -220, 256 * i);
                     i = i +3;
