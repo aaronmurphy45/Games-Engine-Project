@@ -11,16 +11,21 @@ public class Crate : MonoBehaviour {
 
     public GameObject cracked;
 
+    public int speed = 10;
+
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.name == "Sphere") {
             Debug.Log("Crate: OnTriggerEnter: cube");
+
             
 
             float posx = cube.transform.position.x;
             float posz = cube.transform.position.z;
             float posy = cube.transform.position.y;
 
-            cracked.transform.position = new Vector3(posx, posy, posz+5);
+
+
+            cracked.transform.position = new Vector3(posx, posy, posz+speed);
 
             cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
             audioSource.clip = audio;
@@ -36,5 +41,8 @@ public class Crate : MonoBehaviour {
     }
     void Update(){
 
+        if (Input.GetKeyDown(KeyCode.Space)){
+           speed = speed + 10;
+        }
     }
 }
