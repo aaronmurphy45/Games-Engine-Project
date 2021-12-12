@@ -321,6 +321,7 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
                  rand = Random.Range(min, max);
                  */
+                 /*
                 GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
                 rand = Random.Range(min, max);
                 GameObject.Find("GlassBox2").transform.position = new Vector3(20, 2, rand-180);
@@ -330,15 +331,14 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("GlassBox4").transform.position = new Vector3(18, 2, rand-200);
                 speedup++;
                 x++;
+                */
             }
             if (z==1){
 
             
                 //GameObject.Find("Terrain1").transform.position = new Vector3(0, 0, 256 * i - 100);
                 //GameObject.Find("SpikedTerrain1").transform.position = new Vector3(-167, -220, 256 * i -100);
-                GameObject.Find("TunnelRight").transform.position = new Vector3(29, 5, 256 * i - 100);
-                GameObject.Find("TunnelLeft").transform.position = new Vector3(3, 5, 256 * i - 100);
-                GameObject.Find("TunnelTop").transform.position = new Vector3(15, 10, 256 * i - 100);
+                
 
                 z++;
                 i++;
@@ -363,6 +363,7 @@ public class Ball : MonoBehaviour {
                 rand = Random.Range(min, max);
                 GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
                 */
+                /*
                  rand = Random.Range(min, max);
                 GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
                 rand = Random.Range(min, max);
@@ -374,6 +375,7 @@ public class Ball : MonoBehaviour {
         
                 speedup++;
                 x++;
+                */
             }
             if (z==2){
    
@@ -403,6 +405,7 @@ public class Ball : MonoBehaviour {
                 GameObject.Find("Cube7").transform.position = new Vector3(30, 2, rand-350);
                  rand = Random.Range(min, max);
                  */
+                 /*
                 GameObject.Find("GlassBox1").transform.position = new Vector3(10, 2, rand-120);
                 rand = Random.Range(min, max);
                 GameObject.Find("GlassBox2").transform.position = new Vector3(20, 2, rand-180);
@@ -416,6 +419,7 @@ public class Ball : MonoBehaviour {
                 z=0;
                 i++;
                 x++;
+                */
             }
             
 
