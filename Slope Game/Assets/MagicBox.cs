@@ -5,6 +5,7 @@ using System.Collections;
 public class MagicBox : MonoBehaviour {
     
 IEnumerator SpecialEffect(){
+     
      Material mat = Resources.Load("Special", typeof(Material)) as Material;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
         //score = score + 10;
