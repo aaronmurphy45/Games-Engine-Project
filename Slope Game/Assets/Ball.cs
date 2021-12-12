@@ -97,40 +97,40 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox1")
                 {
-                    if (checker!=1){
+                    if (checker==1){
                         score = score + 10;
                     }
                     else{
-                        score = score - 50;
+                        score = score - 20;
                     }
                     
                 }
                 if (other.gameObject.name == "GlassBox2")
                 {
-                    if (checker!=1){
+                    if (checker==1){
                         score = score + 10;
                     }
                     else{
-                        score = score - 50;
+                        score = score - 20;
                     }
                     
                 }
                 if (other.gameObject.name == "GlassBox3")
                 {
-                     if (checker!=1){
+                     if (checker==1){
                         score = score + 10;
                     }
                     else{
-                        score = score - 50;
+                        score = score - 20;
                     }
                 }
                 if (other.gameObject.name == "GlassBox4")
                 {
-                     if (checker!=1){
+                     if (checker==1){
                         score = score + 10;
                     }
                     else{
-                        score = score - 50;
+                        score = score - 20;
                     }
                 }
 

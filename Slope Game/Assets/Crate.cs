@@ -23,21 +23,42 @@ public class Crate : MonoBehaviour {
        
     }
     void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.name);
+
+        Debug.Log("Collision");
+        if (other.gameObject.tag == "MagicBox")
+        {
+            StartCoroutine(Special());
+        }
+
+        
         
         if (other.gameObject.name == "Sphere") {
+            if (checker == 1){
+                float posx = cube.transform.position.x;
+                float posz = cube.transform.position.z;
+                float posy = cube.transform.position.y;
+                
+                cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                audioSource.clip = audio;
+                audioSource.Play();
+            }
+            else {
+                float posx = cube.transform.position.x;
+                float posz = cube.transform.position.z;
+                float posy = cube.transform.position.y;
 
-            float posx = cube.transform.position.x;
-            float posz = cube.transform.position.z;
-            float posy = cube.transform.position.y;
+                cracked.transform.position = new Vector3(posx, posy, posz + 20);
+                cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                audioSource.clip = audio;
+                audioSource.Play();
 
-            cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
-            audioSource.clip = audio;
-            audioSource.Play();
+            }
+
+            
             //score = score + 10;
 
         }
-        //if (GameObject.Find("Camera").)
+       
 
 
     }

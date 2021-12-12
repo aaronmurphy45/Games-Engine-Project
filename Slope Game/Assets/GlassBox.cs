@@ -10,6 +10,13 @@ public class GlassBox : MonoBehaviour {
     public AudioSource audioSource;
     public GameObject glass;
 
+    public int checker = 0;
+
+    IEnumerator SpecialEffect()
+    {
+        yield return new WaitForSeconds(5);
+        
+    }
     private void OnTriggerEnter(Collider other) {
         Debug.Log("GlassBox: OnTriggerEnter");
         Debug.Log(other.name);
