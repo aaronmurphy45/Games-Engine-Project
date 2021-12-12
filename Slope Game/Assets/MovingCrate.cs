@@ -48,7 +48,7 @@ public class MovingCrate : MonoBehaviour {
         if(going_right) 
         {
             crate.transform.Translate(Vector3.right * Time.deltaTime * speed); // Move right
-            if(crate.transform.position.x > 5) // Too far right
+            if(crate.transform.position.x < -460) // Too far right
             { 
                 going_right = false; // Switch direction
             }
@@ -56,12 +56,14 @@ public class MovingCrate : MonoBehaviour {
         else 
         {
             crate.transform.Translate(-Vector3.right * Time.deltaTime * speed); // Move left
-            if(crate.transform.position.x < -5) // Too far left
+            if(crate.transform.position.x > -440) // Too far left
             { 
                 going_right = true; // Switch direction
             }
         }
+        // 460 left
 
+        //490 right
        
         //crate.transform.position = Vector3.MoveTowards(crate.transform.position, new Vector3(crate.transform.position.x, crate.transform.position.y, crate.transform.position.z), speed * Time.deltaTime);
         
