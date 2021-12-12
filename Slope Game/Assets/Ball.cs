@@ -151,6 +151,10 @@ public class Ball : MonoBehaviour {
                         score = score - 20;
                     }
                 }
+                if (other.gameObject.name == "MovingCube"){
+                    score = score + 30;
+                }
+                
 
             }
         
