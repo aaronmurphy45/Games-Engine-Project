@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovingCrate : MonoBehaviour {
     public GameObject crate;
-    public int speed = 10;
+    public float speed = 0.002f;
     public AudioClip audio;
     public AudioSource audioSource;
 
@@ -37,7 +37,7 @@ public class MovingCrate : MonoBehaviour {
         float posx = crate.transform.position.x;
         float posz = crate.transform.position.z;
 
-        float newposx = Mathf.PingPong(Time.time * speed, 10);
+        float newposx = Mathf.PingPong(Time.time* speed , 30);
 
         crate.transform.position = new Vector3(newposx, 2, posz);
         //crate.transform.position = Vector3.MoveTowards(crate.transform.position, new Vector3(crate.transform.position.x, crate.transform.position.y, crate.transform.position.z), speed * Time.deltaTime);
