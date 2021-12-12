@@ -227,7 +227,7 @@ public class Ball : MonoBehaviour {
             }
 
         */
-        
+
 
         if (GameObject.Find("Sphere").transform.rotation.z!=0){
                 GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);

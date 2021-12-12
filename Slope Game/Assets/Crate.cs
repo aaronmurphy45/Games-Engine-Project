@@ -13,25 +13,31 @@ public class Crate : MonoBehaviour {
 
     public int speed = 10;
 
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.name == "Sphere") {
-            Debug.Log("Crate: OnTriggerEnter: cube");
 
-            
+    public int checker = 0;
+    IEnumerator Special()
+    {
+        checker = 1;
+        yield return new WaitForSeconds(5);
+        checker =0;
+       
+    }
+    void OnTriggerEnter(Collider other) {
+        Debug.Log(other.gameObject.name);
+        
+        if (other.gameObject.name == "Sphere") {
 
             float posx = cube.transform.position.x;
             float posz = cube.transform.position.z;
             float posy = cube.transform.position.y;
 
-
-
-            cracked.transform.position = new Vector3(posx, posy, posz+speed);
-
             cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
             audioSource.clip = audio;
             audioSource.Play();
             //score = score + 10;
+
         }
+        //if (GameObject.Find("Camera").)
 
 
     }
