@@ -34,7 +34,7 @@ public class Ball : MonoBehaviour {
  public int lives = 3;
 
  public Text MyText;
- public int checker = 0;
+ public bool checker = false;
 
  AudioSource audio;
  AudioSource audio2;
@@ -45,10 +45,10 @@ public class Ball : MonoBehaviour {
         score = score + 10;
         GameObject.Find("Magic Box").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         speed = 150;
-        checker = 1;
+        checker = true;
         yield return new WaitForSecondsRealtime(5);
         speed = 10;
-        checker = 0;
+        checker = false;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
      }
@@ -97,39 +97,57 @@ public class Ball : MonoBehaviour {
                 }
                 if (other.gameObject.name == "GlassBox1")
                 {
-                    if (checker==1){
+                    if (checker){
                         score = score + 10;
                     }
-                    else{
+                    if (!checker){
                         score = score - 20;
                     }
                     
                 }
                 if (other.gameObject.name == "GlassBox2")
                 {
-                    if (checker==1){
+                    if (checker){
                         score = score + 10;
                     }
-                    else{
+                    if (!checker){
                         score = score - 20;
                     }
                     
                 }
                 if (other.gameObject.name == "GlassBox3")
                 {
-                     if (checker==1){
+                     if (checker){
                         score = score + 10;
                     }
-                    else{
+                    if (!checker){
                         score = score - 20;
                     }
                 }
                 if (other.gameObject.name == "GlassBox4")
                 {
-                     if (checker==1){
+                     if (checker){
                         score = score + 10;
                     }
-                    else{
+                    if (!checker){
+                        score = score - 20;
+                    }
+                }
+                if (other.gameObject.name == "GlassBox5")
+                {
+                     if (checker){
+                        score = score + 10;
+                    }
+                    if (!checker){
+                        score = score - 20;
+                    }
+                }
+                if (other.gameObject.name == "GlassBox6")
+                {
+                     if (checker){
+                        score = score + 10;
+                    }
+                    if (!checker){
                         score = score - 20;
                     }
                 }
@@ -141,6 +159,7 @@ public class Ball : MonoBehaviour {
     
        
         GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
+        checker = false;
     
         
         MyText.text = "";
