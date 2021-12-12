@@ -154,6 +154,15 @@ public class Ball : MonoBehaviour {
                 if (other.gameObject.name == "MovingCube"){
                     score = score + 30;
                 }
+                if (other.gameObject.name == "MovingCube1"){
+                    score = score + 30;
+                }
+                if (other.gameObject.name == "MovingCube2"){
+                    score = score + 30;
+                }
+                if (other.gameObject.name == "MovingCube3"){
+                    score = score + 30;
+                }
                 
 
             }
