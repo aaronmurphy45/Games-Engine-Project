@@ -77,7 +77,7 @@ eg.
         }
 ```
 
-The magic box componenet of this uses a Coroutine. When the box is collided with it changes the Spheres material to a different one and transports it away like in the previous code and the balls speed is also upped. I also set a checker to true, this checker is used to check if the ball is in magic mode when calculating its points for the glass box. This checker is also used in the Crate script to turn off the smashing of the crates to avoid camera/ ball getting knocked. The Coroutine then waits for 5 seconds using the command ``` yield return new WaitForSecondsRealtime(5);``` 
+The magic box componenet of this uses a Coroutine. When the box is collided with it changes the Spheres material to a different one and transports it away like in the previous code and the balls speed is also upped. I also set a checker to true, this checker is used to check if the ball is in magic mode when calculating its points for the glass box. This checker is also used in the Crate script to turn off the smashing of the crates to avoid camera/ ball getting knocked. The Coroutine then waits for 5 seconds using the command ``` yield return new WaitForSecondsRealtime(5);```. The ball is then changed back to its default skin and its speed is set to normal again. 
 
 
 ```
