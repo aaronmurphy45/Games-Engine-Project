@@ -13,7 +13,6 @@ public class CubeGeneration : MonoBehaviour {
             // The length of each terrain is 256. 
             // As the ball moves fowrad, the cubes will be generated in a random position in bewteen that multiple of the length of the terrain.
             if (sphere.transform.position.z > (256*i)-30) {
-
                 // Randomize x positon of the cube between 5 and 25 
                 int min = 5, max = 25;
                 int randx = Random.Range(min, max);
