@@ -40,10 +40,7 @@ public class MovingCrate : MonoBehaviour {
         float posz = crate.transform.position.z;
         float posy = crate.transform.position.y;
 
-        //float newposx = Mathf.PingPong(Time.time* speed , 30);
-
-       Debug.Log(crate.name + " " + posx + " " + posz);
-       
+        //float newposx = Mathf.PingPong(Time.time* speed , 30);       
            
         
         //Move crate on terrain 

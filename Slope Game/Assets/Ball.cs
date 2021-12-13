@@ -3,6 +3,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour {
 
@@ -212,6 +213,17 @@ public bool gamestart2 = false;
 
 	 void Update()
     {
+
+        Debug.Log(GameObject.Find("Sphere").transform.position.y);
+            
+            if (GameObject.Find("Sphere").transform.position.y < -10)
+            {
+                //SceneManager.SetActiveScene(SceneManager.GetSceneByName("GameOver"));
+                //Application.LoadLevel(2);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+               
+
+            }
         /*
         Vector3 ballPos = GameObject.Find("Sphere").transform.position;
         int camposx = (int)ballPos.x;
@@ -456,13 +468,8 @@ public bool gamestart2 = false;
 
 
             //Collider
-            
-            if (GameObject.Find("Sphere").transform.position.y < -10)
-            {
-               Application.LoadLevel(2);
-               
 
-            }
+            
 
         }
     
