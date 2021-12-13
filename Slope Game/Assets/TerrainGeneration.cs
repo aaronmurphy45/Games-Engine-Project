@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+
+// This script is used to generate the terrain and the spiked terrain underneath it.
 public class TerrainGeneration : MonoBehaviour
 {
 
@@ -17,9 +19,8 @@ public class TerrainGeneration : MonoBehaviour
     public GameObject sphere;
     public GameObject terrain;
     public GameObject spikedTerrain;
-    public GameObject streetlight;
-
     
+
     
 
     public TerrainGeneration(){
@@ -27,9 +28,12 @@ public class TerrainGeneration : MonoBehaviour
         }
     }
     void Update(){
+        //  // The length of each terrain is 256. 
+            // As the ball moves forward, the terrain and the spiked terrain will be generated exactly 256 blocks from the previous terrain.
             if (sphere.transform.position.z > (256*i)-256){
                     terrain.transform.position = new Vector3(0, 0, 256 * i - 100);
                     spikedTerrain.transform.position = new Vector3(-167, -220, 256 * i);
+                    // i + 3 as there are 3 different terrains which are intermittently generated.
                     i = i +3;
                 }
         }

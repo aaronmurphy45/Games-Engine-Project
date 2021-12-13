@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+// This script is used to generate the perlin noise for the scpiked terrain which is around the path
 public class PerlinNoise : MonoBehaviour {
     public int terrain = 10;
     public int width = 10;
