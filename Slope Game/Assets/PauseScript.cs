@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour{
     // Start is called before the first frame update
@@ -10,6 +12,7 @@ public class PauseScript : MonoBehaviour{
 
    
     void Start(){
+        
         Debug.Log("start");
        pauseMenuUI.SetActive(false);
     }
@@ -48,7 +51,6 @@ public class PauseScript : MonoBehaviour{
     }
     public void QuitGame()
     {
-        Debug.Log("Quitting Game");
-        Application.Quit();
-    }
+        SceneManager.LoadScene(0);
+    } 
 }

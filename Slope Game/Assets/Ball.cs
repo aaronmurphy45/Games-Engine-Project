@@ -202,6 +202,7 @@ public bool gamestart2 = false;
         
 
 	void Start () {
+        //Time.timeScale = 1f;
         checker = false;
         //audio.volume = 0.5f;
         //MyText.text = "";
