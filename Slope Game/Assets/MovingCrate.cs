@@ -10,7 +10,7 @@ public class MovingCrate : MonoBehaviour {
 
    void OnTriggerEnter(Collider other) {
 
-        Debug.Log("Collision");
+        
         
         if (other.gameObject.name == "Sphere") {
           
@@ -38,29 +38,32 @@ public class MovingCrate : MonoBehaviour {
 
         float posx = crate.transform.position.x;
         float posz = crate.transform.position.z;
+        float posy = crate.transform.position.y;
 
         //float newposx = Mathf.PingPong(Time.time* speed , 30);
+
+
        
            
         
-        
+        //Move crate on terrain 
+        if (going_right) {
+            crate.transform.position = new Vector3(posx + Time.deltaTime * speed, posy, posz);
+        }
+        else {
+            crate.transform.position = new Vector3(posx - Time.deltaTime * speed, posy, posz);
+        }
+        if (posx <= -463.0f) {
+            Debug.Log("going right");
+            going_right = false;
+        }
+        if (posx >= -433.0f) {
+            Debug.Log("here");
+            going_right = true;
+        }
 
-        if(going_right) 
-        {
-            crate.transform.Translate(Vector3.right * Time.deltaTime * speed); // Move right
-            if(crate.transform.position.x > -460) // Too far right
-            { 
-                going_right = false; // Switch direction
-            }
-        }
-        else 
-        {
-            crate.transform.Translate(-Vector3.right * Time.deltaTime * speed); // Move left
-            if(crate.transform.position.x < -440) // Too far left
-            { 
-                going_right = true; // Switch direction
-            }
-        }
+
+        
         // 460 left
 
         //490 right
