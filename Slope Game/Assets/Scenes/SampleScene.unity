@@ -1440,6 +1440,7 @@ GameObject:
   - component: {fileID: 700034379}
   - component: {fileID: 700034378}
   - component: {fileID: 700034377}
+  - component: {fileID: 700034383}
   m_Layer: 0
   m_Name: MovingCube
   m_TagString: Untagged
@@ -1474,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crate: {fileID: 700034375}
-  speed: 1
+  speed: 23
   audio: {fileID: 8300000, guid: 7e92f3af6cbbb4ba58aed6346ba96938, type: 3}
   audioSource: {fileID: 1770793707}
   going_right: 0
@@ -1568,6 +1569,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700034375}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &700034383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700034375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afefaf7aacb74ca68e76de39adf5b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 700034375}
+  sphere: {fileID: 1639985637}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1782,7 @@ GameObject:
   - component: {fileID: 737037283}
   - component: {fileID: 737037282}
   - component: {fileID: 737037281}
+  - component: {fileID: 737037287}
   m_Layer: 0
   m_Name: MovingCube4
   m_TagString: Untagged
@@ -1801,7 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crate: {fileID: 737037279}
-  speed: 1
+  speed: 6
   audio: {fileID: 8300000, guid: 7e92f3af6cbbb4ba58aed6346ba96938, type: 3}
   audioSource: {fileID: 1770793707}
   going_right: 0
@@ -1895,6 +1911,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737037279}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &737037287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737037279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afefaf7aacb74ca68e76de39adf5b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 737037279}
+  sphere: {fileID: 1639985637}
 --- !u!1 &774511643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2265,7 @@ GameObject:
   - component: {fileID: 959371228}
   - component: {fileID: 959371227}
   - component: {fileID: 959371226}
+  - component: {fileID: 959371232}
   m_Layer: 0
   m_Name: MovingCube3
   m_TagString: Untagged
@@ -2363,6 +2394,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959371224}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &959371232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959371224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afefaf7aacb74ca68e76de39adf5b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 959371224}
+  sphere: {fileID: 1639985637}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,6 +4597,7 @@ GameObject:
   - component: {fileID: 1816802248}
   - component: {fileID: 1816802247}
   - component: {fileID: 1816802246}
+  - component: {fileID: 1816802252}
   m_Layer: 0
   m_Name: MovingCube2
   m_TagString: Untagged
@@ -4586,7 +4632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crate: {fileID: 1816802244}
-  speed: 1
+  speed: 15
   audio: {fileID: 8300000, guid: 7e92f3af6cbbb4ba58aed6346ba96938, type: 3}
   audioSource: {fileID: 1770793707}
   going_right: 0
@@ -4680,6 +4726,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816802244}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1816802252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816802244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afefaf7aacb74ca68e76de39adf5b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 1816802244}
+  sphere: {fileID: 1639985637}
 --- !u!1 &1871556689
 GameObject:
   m_ObjectHideFlags: 0
@@ -5272,6 +5332,7 @@ GameObject:
   - component: {fileID: 2087500793}
   - component: {fileID: 2087500792}
   - component: {fileID: 2087500791}
+  - component: {fileID: 2087500797}
   m_Layer: 0
   m_Name: MovingCube1
   m_TagString: Untagged
@@ -5306,7 +5367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crate: {fileID: 2087500789}
-  speed: 1
+  speed: 19
   audio: {fileID: 8300000, guid: 7e92f3af6cbbb4ba58aed6346ba96938, type: 3}
   audioSource: {fileID: 1770793707}
   going_right: 0
@@ -5400,6 +5461,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087500789}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2087500797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087500789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afefaf7aacb74ca68e76de39adf5b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 2087500789}
+  sphere: {fileID: 0}
 --- !u!1 &2139971255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1168907351885854, guid: b3dc6d5c1ab8158418b2f82094975753,

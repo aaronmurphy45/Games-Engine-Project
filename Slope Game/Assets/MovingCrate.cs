@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovingCrate : MonoBehaviour {
     public GameObject crate;
-    public float speed = 0.1f;
+    public float speed = 100;
     public AudioClip audio;
     public AudioSource audioSource;
 
@@ -40,15 +40,15 @@ public class MovingCrate : MonoBehaviour {
         float posz = crate.transform.position.z;
 
         //float newposx = Mathf.PingPong(Time.time* speed , 30);
-        while (crate.transform.position.x > 30) {
-            crate.transform.Translate(Vector3.right * Time.deltaTime * speed);
-        }
+       
+           
+        
         
 
         if(going_right) 
         {
             crate.transform.Translate(Vector3.right * Time.deltaTime * speed); // Move right
-            if(crate.transform.position.x < -460) // Too far right
+            if(crate.transform.position.x > -460) // Too far right
             { 
                 going_right = false; // Switch direction
             }
@@ -56,7 +56,7 @@ public class MovingCrate : MonoBehaviour {
         else 
         {
             crate.transform.Translate(-Vector3.right * Time.deltaTime * speed); // Move left
-            if(crate.transform.position.x > -440) // Too far left
+            if(crate.transform.position.x < -440) // Too far left
             { 
                 going_right = true; // Switch direction
             }
