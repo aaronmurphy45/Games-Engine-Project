@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
+   // This script is used to restart the game or quit from the game over menu
     public void PlayGame()
     {
        SceneManager.LoadScene(1);
