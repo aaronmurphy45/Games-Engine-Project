@@ -13,11 +13,16 @@ public class SetSound : MonoBehaviour {
     public Slider slider;
     public TMP_Text textvol;
 
+
+// The volume will be initially set to 100%
  void Start() {
     slider.value = 1;
 }
+
+// As the slider value changes, the menu volume will change
 void Update() {
-    textvol.text = slider.value.ToString();
+    float vol = slider.value * 100;
+    textvol.text = vol.ToString("0") + "%";
     source.volume = slider.value;
     source.loop = true;
 }
