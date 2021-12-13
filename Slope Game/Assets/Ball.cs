@@ -36,6 +36,10 @@ public class Ball : MonoBehaviour {
  public Text MyText;
  public bool checker = false;
 
+ public bool gamestart1 = false;
+public bool gamestart2 = false;
+
+
  AudioSource audio;
  AudioSource audio2;
   
@@ -55,6 +59,7 @@ public class Ball : MonoBehaviour {
      
      
      void OnTriggerEnter(Collider other) {
+         
                 if (other.gameObject.name == "Cube")
                 {
                     score = score + 10;
@@ -231,9 +236,20 @@ public class Ball : MonoBehaviour {
             GameObject.Find("Camera").transform.position = new Vector3(camposx, camposy, camposz);
         }
         */
-
         
-        GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
+       
+            
+
+        if (score!=0){
+           if (gamestart1){
+               if (gamestart2){
+                 GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
+               }
+           }
+            
+            
+        }
+        //GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
         
         //score = score + 1;
         //scoreText.text = "Score: " + score;
@@ -291,6 +307,7 @@ public class Ball : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             //Move object across XY plane
+            gamestart1 = true;
             transform.Translate(Vector3.left *Time.deltaTime *5);
             //transform.Rotate(0, Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);
@@ -299,6 +316,7 @@ public class Ball : MonoBehaviour {
         if (Input.GetKey(KeyCode.RightArrow))
         {
             //Move object across XY plane
+            gamestart2 = true;
             transform.Translate(Vector3.right * Time.deltaTime *5);
             //transform.Rotate(0, Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
             //transform.Translate(0,0, Input.GetAxis("Verical") * speed * Time.deltaTime);

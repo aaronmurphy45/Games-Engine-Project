@@ -301,6 +301,7 @@
 "Assets/MovingCrate.cs"
 "Assets/MovingCrateGeneration.cs"
 "Assets/PerlinNoise.cs"
+"Assets/SetSound.cs"
 "Assets/TerrainGeneration.cs"
 "Assets/TerrainScript.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

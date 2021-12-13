@@ -713,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.8235294}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 2a32368d361820b43aecf63c6af6570f, type: 2}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.8235294}
   m_RaycastTarget: 1
   m_Maskable: 1
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 37584e1ee4057dc4c859984e6dbd905e, type: 2}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 0.8235294}
   m_RaycastTarget: 1
   m_Maskable: 1
