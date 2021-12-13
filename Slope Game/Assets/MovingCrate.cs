@@ -32,6 +32,9 @@ public class MovingCrate : MonoBehaviour {
 
 
     }
+    void Start(){
+        audioSource.volume = 0.5f;
+    }
    void Update() {
        
        //move crate bewteen 2 points 

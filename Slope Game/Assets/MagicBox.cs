@@ -24,6 +24,7 @@ private void OnTriggerEnter(Collider other) {
 }
 void Start () {
     //score = 0;
+    
 
 }
 void Update() {

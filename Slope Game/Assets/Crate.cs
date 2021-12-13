@@ -71,6 +71,7 @@ public class Crate : MonoBehaviour {
 
     }
     void Start(){
+        audioSource.volume = 0.5f;
         audioSource.clip = audio;
     }
     // The Update function is used to determine if the ball has sped up using the space key

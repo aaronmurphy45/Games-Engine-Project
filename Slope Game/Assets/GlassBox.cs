@@ -40,6 +40,7 @@ public class GlassBox : MonoBehaviour {
     }
     private void Start() {
        audioSource.clip = glassSound;
+       audioSource.volume = 0.5f;
         
     }
     private void Update() {
