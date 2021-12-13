@@ -38,6 +38,79 @@ if (sphere.transform.position.z > (256*i)-30) {
             }
 ```
 
+The crates are smashed using colliders. There is a box collider on the crates and a sphere collider on the ball. When they collide it sets off a function called OnTriggerEnter. This function then replaces the crate with a carcked crate with rigidbody, simulating the crate smashing and transports it away. This also plays an audio clip of a crate smashing. 
+eg. 
+```
+ void OnTriggerEnter(Collider other) {
+
+        Debug.Log("Collision");
+        if (other.gameObject.tag == "MagicBox")
+        {
+            StartCoroutine(Special());
+        }
+        
+        if (other.gameObject.name == "Sphere") {
+            // If the crate collides with the ball, and the ball is in magic mode, the carte is transformed to start of scene and audio is played
+            if (checker == 1){
+                float posx = cube.transform.position.x;
+                float posz = cube.transform.position.z;
+                float posy = cube.transform.position.y;
+                
+                cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                audioSource.clip = audio;
+                audioSource.Play();
+            }
+            // If the crate collides with the ball, and the ball is not in magic mode, the crate is transformed to the start, a cracked crate is spawned infront and the audio is played
+            else {
+                float posx = cube.transform.position.x;
+                float posz = cube.transform.position.z;
+                float posy = cube.transform.position.y;
+                
+                // The cracked crate is spawned the speed distance infront of the crate to allow for the ball not to hit the carte
+                cracked.transform.position = new Vector3(posx, posy, posz + speed +20);
+                cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+                audioSource.clip = audio;
+                audioSource.Play();
+
+            }
+
+        }
+```
+
+The magic box componenet of this uses a Coroutine. When the box is collided with it changes the Spheres material to a different one and transports it away like in the previous code and the balls speed is also upped. I also set a checker to true, this checker is used to check if the ball is in magic mode when calculating its points for the glass box. This checker is also used in the Crate script to turn off the smashing of the crates to avoid camera/ ball getting knocked. The Coroutine then waits for 5 seconds using the command ``` yield return new WaitForSecondsRealtime(5);``` 
+
+
+```
+
+  // This Coroutine is used to make the player Magic after hitting a Magic Box 
+     IEnumerator SpecialEffect(){
+
+        // Change the material of the ball to the Magic Material
+        Material mat = Resources.Load("Special", typeof(Material)) as Material;
+        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
+        // Add score
+        score = score + 10;
+
+        // Move crate to start opf course. 
+        GameObject.Find("Magic Box").transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+        // Up the speed of the ball
+        speed = 150;
+
+        // This checker is used to determine whether the ball is in magic mode or not - used when calaculating score for glass boxes
+        checker = true;
+
+        // Stay in magic mode for 5 seconds
+        yield return new WaitForSecondsRealtime(5);
+
+        // Change the material of the ball back to the normal material and reset speed to normal speed
+        speed = 10;
+        checker = false;
+        GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
+        
+     }
+     
+```
+
 
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
@@ -62,6 +135,8 @@ if (sphere.transform.position.z > (256*i)-30) {
 # References
 
 # What I am most proud of in the assignment
+
+I am very proud of my entire assignment as I put a lot of hard work into it. However, more particularly I am really proud of the procedural generation in which I spawned the crates in a random sequence. I worked really hard on this component and am very happy with how it turned out. I am also very happy with the magic mode in which the user becomes a different material and invincible. This took me a while to work out and I had a lot of problems with differemt factors such as changing the material also the ball hitting the cracked crates as it was moving to quickly which I solved. 
 
 # Proposal submitted earlier can go here:
 
