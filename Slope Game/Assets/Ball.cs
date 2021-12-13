@@ -459,18 +459,7 @@ public bool gamestart2 = false;
             
             if (GameObject.Find("Sphere").transform.position.y < -10)
             {
-                Debug.Log("hiXX");
-                lives = lives-1;
-                Debug.Log(lives);
-                GameObject.Find("Sphere").transform.position = new Vector3(10, 5, 256*i);
-                GameObject.Find("Camera").transform.position = new Vector3(10, 5, 256*i-10);
-                GameObject.Find("Lives").GetComponent<Text>().text = "Lives: " + lives;
-                /*
-                if (lives == 0)
-                {
-                    SceneManager.LoadScene("GameOver");
-                }
-                */
+               Application.LoadLevel(2);
                
 
             }
