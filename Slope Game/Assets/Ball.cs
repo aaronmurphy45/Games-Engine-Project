@@ -203,7 +203,7 @@ public bool gamestart2 = false;
 
 	void Start () {
         checker = false;
-        audio.volume = 0.5f;
+        //audio.volume = 0.5f;
         //MyText.text = "";
 	}
 
