@@ -4,8 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-
-
+// This script is used to set the sound volume using the slider in the Options menu.
 
 public class SetSound : MonoBehaviour {
     
@@ -15,7 +14,7 @@ public class SetSound : MonoBehaviour {
     public TMP_Text textvol;
 
  void Start() {
-    
+    slider.value = 1;
 }
 void Update() {
     textvol.text = slider.value.ToString();

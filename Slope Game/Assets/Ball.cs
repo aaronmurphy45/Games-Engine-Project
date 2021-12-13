@@ -233,9 +233,11 @@ public bool gamestart2 = false;
             speed = speed + 10;
         }
         // This if makes the speed quiker as the score increases.
+        
         if (score > 1000*i)
         {
             speed = speed + 10;
+            i++;
             
         }
 
