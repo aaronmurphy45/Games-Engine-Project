@@ -4938,7 +4938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  speed: 30
+  speed: 10
   rotSpeed: 30
   i: 1
   terrain: 0
@@ -4961,12 +4961,12 @@ MonoBehaviour:
   gamestart3: 0
   highscorekey: highscore
   highscore: 0
-  canvas: {fileID: 0}
+  canvas: {fileID: 1727230996}
   highscoreText: {fileID: 866925092}
   checke: 0
   prevspeed: 0
-  audioSource: {fileID: 0}
-  audio: {fileID: 0}
+  audioSource: {fileID: 1770793707}
+  audio: {fileID: 8300000, guid: 3f93fd5b864f74279baf0b30626c937e, type: 3}
 --- !u!1818360609 &1639985644
 RotationConstraint:
   m_ObjectHideFlags: 0
@@ -6393,13 +6393,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040247484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.09406096, y: 0.07892651, z: 0.07892651, w: 0.9892895}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1639985642}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 10, z: 10}
 --- !u!81 &2040247486
 AudioListener:
   m_ObjectHideFlags: 0

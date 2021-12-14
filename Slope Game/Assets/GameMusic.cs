@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 public class GameMusic : MonoBehaviour {
-        public AudioSource audio2;
+public AudioSource audio2;
 public bool gamestart1 = false;
 public bool gamestart2 = false;
 public bool gamestart3 = false;

@@ -61,7 +61,7 @@ public class Crate : MonoBehaviour {
                 float posy = cube.transform.position.y;
                 
                 // The cracked crate is spawned the speed distance infront of the crate to allow for the ball not to hit the carte
-                cracked.transform.position = new Vector3(posx, posy, posz + 20);
+                cracked.transform.position = new Vector3(posx, posy, posz + 30);
                 cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
 
                 audioSource.clip = audio;

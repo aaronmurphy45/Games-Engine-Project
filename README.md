@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=zc8ac_qUXQY
+
 
 # Project Title
 
@@ -16,9 +16,11 @@ For my Games-Engine-Project, I have created Create Smasher, a game in which a Ba
 
 # Instructions for use
 When the user enters a game, they will be met by a menu where they can choose to play the game, view the rules, edit the options or exit the game. If the user presses play 
-they will spawn as a ball on a narrow path facing multiple crates. The player must avoid the glass panes and stay on the path, using the left and right arrow on the keyboard, while smashing crates to pick up points. The user can also smash into the magic box in which they enter magic mode. In this magic mode the user will gain super speed and also not lose points when smashing into the glassboxes
+they will spawn as a ball on a narrow path facing multiple crates. The player must avoid the death boxes(red), glass panes (blue) and stay on the path, using the left and right arrow on the keyboard, while smashing crates to pick up points. The user can also smash into the magic box in which they enter magic mode. In this magic mode the user will gain super speed and also not not die to death boxes or lose points when smashing into the glassboxes
 
 # How it works
+
+[![YouTube] Watch Youtube video of Game Here](https://www.youtube.com/watch?v=46LEncOIBuU)
 
 The game has three different scenes. The main menu scene which uses UI buttons and onclick fucntions to call the Scene Manager to start the game, or set the option page active or rules page active. Once the game is started, the user spwans as a ball on a narrow terrain, surround by spikes created with Perlin Noise. These terrains are generated sequentially as their length is iterated through in 3's, as are there are 3 terrains which interchange, by the the length of each terrain as it reaches a certain position from the next iteration it transforms to its next position in the iteration. All the cubes are generated the exact same way using an iteration of 1 instaed of 3 so they spawn on every terrain as the ball moves forward. However the cubes transform to random position in the next terrain with a min-x of the left hand side of the path and max-x of the left hand side and a random z position in the next terrain which is about to gehnerate infront. 
 eg.
@@ -112,6 +114,10 @@ The magic box componenet of this uses a Coroutine. When the box is collided with
 ```
 
 
+I also created a start menu, which I watched a tutorial on. I also tweaked it to include a workign slider and a rules tab which is not included in the video. 
+
+
+
 # List of classes/assets in the project and whether made yourself or modified or if its from a source, please give the reference
 
 | Class/asset | Source |
@@ -133,7 +139,7 @@ The magic box componenet of this uses a Coroutine. When the box is collided with
 | GameOver | Significantly Modified From [https://www.youtube.com/watch?v=JivuXdrIHK0]() |
 
 
-[![YouTube] Watch Youtube video of Game Here](https://www.youtube.com/watch?v=ROQAuhmXl5A)
+[![YouTube] Watch Youtube video of Game Here](https://www.youtube.com/watch?v=46LEncOIBuU)
 
 # References
 [https://www.youtube.com/watch?v=JivuXdrIHK0]()
@@ -150,73 +156,9 @@ I am very proud of my entire assignment as I put a lot of hard work into it. How
 
 # Proposal submitted earlier can go here:
 
-## This is how to markdown text:
+I have changed my project from the first proposal.
 
-This is *emphasis*
 
-This is a bulleted list
-
-- Item
-- Item
-
-This is a numbered list
-
-1. Item
-1. Item
-
-This is a [hyperlink](http://bryanduggan.org)
-
-# Headings
-## Headings
-#### Headings
-##### Headings
-
-This is code:
-
-```Java
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-So is this without specifying the language:
-
-```
-public void render()
-{
-	ui.noFill();
-	ui.stroke(255);
-	ui.rect(x, y, width, height);
-	ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-	ui.text(text, x + width * 0.5f, y + height * 0.5f);
-}
-```
-
-This is an image using a relative URL:
-
-![An image](images/p8.png)
-
-This is an image using an absolute URL:
-
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
-
-This is a youtube video:
-
-[![YouTube](http://img.youtube.com/vi/J2kHSSFA4NU/0.jpg)](https://www.youtube.com/watch?v=J2kHSSFA4NU)
-
-This is a table:
-
-| Heading 1 | Heading 2 |
-|-----------|-----------|
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
-|Some stuff | Some more stuff in this column |
 
 
 
