@@ -18,6 +18,7 @@ public class Crate : MonoBehaviour {
 
     public int speed = 10;
 
+    public int prevspeed=0;
 
     public int checker = 0;
 
@@ -27,10 +28,11 @@ public class Crate : MonoBehaviour {
     // This is because when the ball is moving at speed, the ball collides with the cracked crate and knocks the camera/ball out of line. 
     IEnumerator Special()
     {
+        prevspeed = speed;
         checker = 1;
         yield return new WaitForSeconds(5);
         checker =0;
-        speed = 30;
+        speed = prevspeed;
        
     }
     void OnTriggerEnter(Collider other) {
@@ -59,7 +61,7 @@ public class Crate : MonoBehaviour {
                 float posy = cube.transform.position.y;
                 
                 // The cracked crate is spawned the speed distance infront of the crate to allow for the ball not to hit the carte
-                cracked.transform.position = new Vector3(posx, posy, posz + speed-10);
+                cracked.transform.position = new Vector3(posx, posy, posz + speed);
                 cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
 
                 audioSource.clip = audio;

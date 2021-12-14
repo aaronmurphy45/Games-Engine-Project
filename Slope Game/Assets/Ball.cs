@@ -55,11 +55,16 @@ public Text highscoreText;
     public bool checke =false;
 
     public int prevspeed = 0;
+
+    public AudioSource audioSource;
+
+    public AudioClip audio;
   
 
 
 
   // This Coroutine is used to make the player Magic after hitting a Magic Box 
+    
      IEnumerator SpecialEffect(){
 
          prevspeed = speed;
@@ -86,6 +91,17 @@ public Text highscoreText;
         checker = false;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
+     }
+
+     IEnumerator SpecialDeath(){
+         Time.timeScale = 0f;
+         audioSource.clip = audio;
+            audioSource.Play();
+            yield return new WaitForSecondsRealtime(0.5f);
+             SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1 );
+        
+
+
      }
      
      
@@ -191,6 +207,61 @@ public Text highscoreText;
                     }
                     if (!checker){
                         score = score - 20;
+                    }
+                }
+                if (other.gameObject.name == "DeathBox")
+                {
+
+                     if (checker){
+                        score = score + 10;
+                        audioSource.clip = audio;
+                        audioSource.Play();
+                    }
+                    if (!checker){
+                        StartCoroutine(SpecialDeath());
+                    
+                    }
+                }
+                if (other.gameObject.name == "DeathBox1")
+                {
+                     if (checker){
+                        score = score + 10;
+                        audioSource.clip = audio;
+                        audioSource.Play();
+                    }
+                    if (!checker){
+                        
+
+                        StartCoroutine(SpecialDeath());
+                    
+                    }
+                }
+                if (other.gameObject.name == "DeathBox2")
+                {
+                     if (checker){
+                        score = score + 10;
+                        audioSource.clip = audio;
+                        audioSource.Play();
+                    }
+                    if (!checker){
+                        
+
+                        StartCoroutine(SpecialDeath());
+                    
+                    }
+                }
+                if (other.gameObject.name == "DeathBox3")
+                {
+                     if (checker){
+                        score = score + 10;
+                        audioSource.clip = audio;
+                        audioSource.Play();
+                    }
+                    if (!checker){
+                        
+
+                      StartCoroutine(SpecialDeath());
+                    
                     }
                 }
 
