@@ -132,7 +132,14 @@ The magic box componenet of this uses a Coroutine. When the box is collided with
 | PerlinNoise.cs | From Lecture Notes |
 | GameOver | Significantly Modified From [https://www.youtube.com/watch?v=JivuXdrIHK0]() |
 
+
+[![YouTube] Watch Youtube video of Game Here](https://www.youtube.com/watch?v=ROQAuhmXl5A)
+
 # References
+[https://www.youtube.com/watch?v=JivuXdrIHK0]()
+[https://www.youtube.com/watch?v=JivuXdrIHK0]()
+[https://www.youtube.com/watch?v=JivuXdrIHK0]()
+[https://www.youtube.com/watch?v=zc8ac_qUXQY]()
 
 # What I am most proud of in the assignment
 
@@ -209,5 +216,5 @@ This is a table:
 |Some stuff | Some more stuff in this column |
 
 
-[![YouTube] Watch Youtube video of Game Here](https://www.youtube.com/watch?v=ROQAuhmXl5A)
+
 
