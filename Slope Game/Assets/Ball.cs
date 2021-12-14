@@ -45,12 +45,16 @@ public bool gamestart3 = false;
 public string highscorekey = "highscore";
 public int highscore = 0; 
 
+public GameObject canvas; 
+
 public Text highscoreText;
 
  //public AudioSource audio;
  //public AudioSource audio2;
 
     public bool checke =false;
+
+    public int prevspeed = 0;
   
 
 
@@ -58,6 +62,8 @@ public Text highscoreText;
   // This Coroutine is used to make the player Magic after hitting a Magic Box 
      IEnumerator SpecialEffect(){
 
+         prevspeed = speed;
+        
         // Change the material of the ball to the Magic Material
         Material mat = Resources.Load("Special", typeof(Material)) as Material;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = mat;
@@ -76,7 +82,7 @@ public Text highscoreText;
         yield return new WaitForSecondsRealtime(5);
 
         // Change the material of the ball back to the normal material and reset speed to normal speed
-        speed = 30;
+        speed = prevspeed;
         checker = false;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
@@ -218,6 +224,7 @@ public Text highscoreText;
         //audio.volume = 0;
         Time.timeScale = 0f;
         highscore = PlayerPrefs.GetInt(highscorekey);
+        canvas.SetActive(false);
 
         //MyText.text = "";
 	}
@@ -240,8 +247,15 @@ public Text highscoreText;
                 //audio2.volume = 0.5f;
                 //audio.volume = 0.5f;
                 Time.timeScale = 1f;
+                canvas.SetActive(true);
                 GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
-                highscoreText.text = "Highscore: " + highscore;
+                
+                if (highscore!=null){
+                    highscoreText.text = "Highscore: " + highscore;
+                }
+                else{
+                    highscoreText.text = "Highscore: " + 0;
+                }
                 speed = 30;
                 checke = true;
         }
