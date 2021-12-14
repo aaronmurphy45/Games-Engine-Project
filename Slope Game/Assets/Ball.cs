@@ -218,8 +218,6 @@ public Text highscoreText;
         //audio.volume = 0;
         Time.timeScale = 0f;
         highscore = PlayerPrefs.GetInt(highscorekey);
-        MyText.text = "Highscore: " + highscore;
-
 
         //MyText.text = "";
 	}
@@ -245,7 +243,6 @@ public Text highscoreText;
                 GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
                 highscoreText.text = "Highscore: " + highscore;
                 speed = 30;
-                
                 checke = true;
         }
         if (checke){
@@ -305,7 +302,7 @@ public Text highscoreText;
         {
             //Move object across XY plane
             gamestart1 = true;
-            transform.Translate(Vector3.left *Time.deltaTime *5);
+            transform.Translate(Vector3.left *Time.deltaTime * 10);
 
         }
          //This if makes the ball move right if Right key is pressed.
@@ -313,7 +310,7 @@ public Text highscoreText;
         {
             //Move object across XY plane
             gamestart2 = true;
-            transform.Translate(Vector3.right * Time.deltaTime *5);
+            transform.Translate(Vector3.right * Time.deltaTime *10);
         }
 
     }

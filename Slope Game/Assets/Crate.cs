@@ -30,6 +30,7 @@ public class Crate : MonoBehaviour {
         checker = 1;
         yield return new WaitForSeconds(5);
         checker =0;
+        speed = 30;
        
     }
     void OnTriggerEnter(Collider other) {
@@ -58,10 +59,12 @@ public class Crate : MonoBehaviour {
                 float posy = cube.transform.position.y;
                 
                 // The cracked crate is spawned the speed distance infront of the crate to allow for the ball not to hit the carte
-                cracked.transform.position = new Vector3(posx, posy, posz + speed +20);
+                cracked.transform.position = new Vector3(posx, posy, posz + speed-10);
                 cube.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
+
                 audioSource.clip = audio;
                 audioSource.Play();
+                //cracked.transform.position = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
 
             }
 
