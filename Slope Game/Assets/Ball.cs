@@ -40,9 +40,17 @@ public class Ball : MonoBehaviour {
  public bool gamestart1 = false;
 public bool gamestart2 = false;
 
+public bool gamestart3 = false;
 
- AudioSource audio;
- AudioSource audio2;
+public string highscorekey = "highscore";
+public int highscore = 0; 
+
+public Text highscoreText;
+
+ //public AudioSource audio;
+ //public AudioSource audio2;
+
+    public bool checke =false;
   
 
 
@@ -68,7 +76,7 @@ public bool gamestart2 = false;
         yield return new WaitForSecondsRealtime(5);
 
         // Change the material of the ball back to the normal material and reset speed to normal speed
-        speed = 10;
+        speed = 30;
         checker = false;
         GameObject.Find("Sphere").GetComponent<MeshRenderer> ().material = Resources.Load("DefBall", typeof(Material)) as Material;
         
@@ -196,6 +204,8 @@ public bool gamestart2 = false;
                 if (other.gameObject.name == "MovingCube4"){
                     score = score + 30;
                 }
+
+
                 
 
             }
@@ -204,7 +214,13 @@ public bool gamestart2 = false;
 	void Start () {
         //Time.timeScale = 1f;
         checker = false;
-        //audio.volume = 0.5f;
+        //audio2.volume = 0;
+        //audio.volume = 0;
+        Time.timeScale = 0f;
+        highscore = PlayerPrefs.GetInt(highscorekey);
+        MyText.text = "Highscore: " + highscore;
+
+
         //MyText.text = "";
 	}
 
@@ -217,22 +233,33 @@ public bool gamestart2 = false;
                
 
             }
+
+        
             
         // When first played, the ball will start moving and break some boxes and display score even though on main menu.
         // This if makes it so if the score is =0 and the user has pressed both left and right the score will display
-        if (score!=0){
-           if (gamestart1){
-               if (gamestart2){
-                 GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
-               }
-           }
-            
-            
+        if (gamestart1 && gamestart2 && checke==false || gamestart3 == true && checke == false){
+                //audio2.volume = 0.5f;
+                //audio.volume = 0.5f;
+                Time.timeScale = 1f;
+                GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
+                highscoreText.text = "Highscore: " + highscore;
+                speed = 30;
+                
+                checke = true;
+        }
+        if (checke){
+            GameObject.Find("Text").GetComponent<Text>().text = "Score: " + score;
+            if (score > highscore){
+                highscore = score;
+                PlayerPrefs.SetInt(highscorekey, highscore);
+            }
         }
         // This if makes the speed of the ball faster when the space key is pressed 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             speed = speed + 10;
+            gamestart3 = true;
         }
         // This if makes the speed quiker as the score increases.
         
