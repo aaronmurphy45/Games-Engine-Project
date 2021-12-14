@@ -213,7 +213,7 @@ public Text highscoreText;
                 {
 
                      if (checker){
-                        score = score + 10;
+                        score = score + 100;
                         audioSource.clip = audio;
                         audioSource.Play();
                     }
@@ -225,7 +225,7 @@ public Text highscoreText;
                 if (other.gameObject.name == "DeathBox1")
                 {
                      if (checker){
-                        score = score + 10;
+                        score = score + 100;
                         audioSource.clip = audio;
                         audioSource.Play();
                     }
@@ -239,7 +239,7 @@ public Text highscoreText;
                 if (other.gameObject.name == "DeathBox2")
                 {
                      if (checker){
-                        score = score + 10;
+                        score = score + 100;
                         audioSource.clip = audio;
                         audioSource.Play();
                     }
@@ -253,7 +253,7 @@ public Text highscoreText;
                 if (other.gameObject.name == "DeathBox3")
                 {
                      if (checker){
-                        score = score + 10;
+                        score = score + 100;
                         audioSource.clip = audio;
                         audioSource.Play();
                     }
