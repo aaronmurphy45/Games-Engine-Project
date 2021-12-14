@@ -24,7 +24,7 @@ they will spawn as a ball on a narrow path facing multiple crates. The player mu
 
 The game has three different scenes. The main menu scene which uses UI buttons and onclick fucntions to call the Scene Manager to start the game, or set the option page active or rules page active. Once the game is started, the user spwans as a ball on a narrow terrain, surround by spikes created with Perlin Noise. These terrains are generated sequentially as their length is iterated through in 3's, as are there are 3 terrains which interchange, by the the length of each terrain as it reaches a certain position from the next iteration it transforms to its next position in the iteration. All the cubes are generated the exact same way using an iteration of 1 instaed of 3 so they spawn on every terrain as the ball moves forward. However the cubes transform to random position in the next terrain with a min-x of the left hand side of the path and max-x of the left hand side and a random z position in the next terrain which is about to gehnerate infront. 
 eg.
-```
+```csharp
 // i iterates by length of terrain and 
 if (sphere.transform.position.z > (256*i)-30) {
                 // Randomize x positon of the cube between 5 and 25 
@@ -42,7 +42,7 @@ if (sphere.transform.position.z > (256*i)-30) {
 
 The crates are smashed using colliders. There is a box collider on the crates and a sphere collider on the ball. When they collide it sets off a function called OnTriggerEnter. This function then replaces the crate with a carcked crate with rigidbody, simulating the crate smashing and transports it away. This also plays an audio clip of a crate smashing. 
 eg. 
-```
+```csharp
  void OnTriggerEnter(Collider other) {
 
         Debug.Log("Collision");
@@ -82,7 +82,7 @@ eg.
 The magic box componenet of this uses a Coroutine. When the box is collided with it changes the Spheres material to a different one and transports it away like in the previous code and the balls speed is also upped. I also set a checker to true, this checker is used to check if the ball is in magic mode when calculating its points for the glass box. This checker is also used in the Crate script to turn off the smashing of the crates to avoid camera/ ball getting knocked. The Coroutine then waits for 5 seconds using the command ``` yield return new WaitForSecondsRealtime(5);```. The ball is then changed back to its default skin and its speed is set to normal again. 
 
 
-```
+```csharp
 
   // This Coroutine is used to make the player Magic after hitting a Magic Box 
      IEnumerator SpecialEffect(){
@@ -114,7 +114,8 @@ The magic box componenet of this uses a Coroutine. When the box is collided with
 ```
 
 
-I also created a start menu, which I watched a tutorial on. I also tweaked it to include a workign slider and a rules tab which is not included in the video. 
+I also created a start menu, which I watched a tutorial on. I also tweaked it to include a working slider and a rules tab which is not included in the video. 
+
 
 
 
@@ -153,6 +154,7 @@ I also created a start menu, which I watched a tutorial on. I also tweaked it to
 # What I am most proud of in the assignment
 
 I am very proud of my entire assignment as I put a lot of hard work into it. However, more particularly I am really proud of the procedural generation in which I spawned the crates in a random sequence. I worked really hard on this component and am very happy with how it turned out. I am also very happy with the magic mode in which the user becomes a different material and invincible. This took me a while to work out and I had a lot of problems with differemt factors such as changing the material also the ball hitting the cracked crates as it was moving to quickly which I solved. 
+
 
 # Proposal submitted earlier can go here:
 

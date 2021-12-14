@@ -356,8 +356,14 @@ public Text highscoreText;
         // If statements that stop the rotation of both the camera and the ball. 
         // I put these in as when the ball hits a crate and the cracked crate is spawned, the ball sometimes hits the carte and the camera starts rotating 
 
-        if (GameObject.Find("Sphere").transform.rotation.z!=0){
-                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
+        if (GameObject.Find("Camera").transform.position.z!=0){
+                GameObject.Find("Camera").transform.position = new Vector3(GameObject.Find("Sphere").transform.position.x, GameObject.Find("Sphere").transform.position.y+5,  GameObject.Find("Sphere").transform.position.z-20);
+            }
+        if (GameObject.Find("Camera").transform.position.x!=0){
+                GameObject.Find("Camera").transform.position = new Vector3(GameObject.Find("Sphere").transform.position.x, GameObject.Find("Sphere").transform.position.y+5, GameObject.Find("Sphere").transform.position.z-20);
+            }
+        if (GameObject.Find("Camera").transform.position.y!=0){
+                GameObject.Find("Camera").transform.position = new Vector3(GameObject.Find("Sphere").transform.position.x, GameObject.Find("Sphere").transform.position.y+5, GameObject.Find("Sphere").transform.position.z-20);
             }
             if (GameObject.Find("Sphere").transform.rotation.y!=0){
                 GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
@@ -365,6 +371,11 @@ public Text highscoreText;
             if (GameObject.Find("Sphere").transform.rotation.x!=0){
                 GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
             }
+            if (GameObject.Find("Sphere").transform.rotation.z!=0){
+                GameObject.Find("Sphere").transform.rotation = Quaternion.Euler(0,0,0);
+            }
+
+        
 
         if (GameObject.Find("Camera").transform.rotation.z!=-6){
                 GameObject.Find("Camera").transform.rotation = Quaternion.Euler(6,-3,-6);
